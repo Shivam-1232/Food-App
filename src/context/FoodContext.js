@@ -5,7 +5,7 @@ export const FoodContext = createContext(FoodData);
 
 export const FoodContextProvider = ({ children }) => {
 
-  const [input, setInput] = useState('');
+  const [Input, setInput] = useState('');
   const [category, setCategory] = useState({
     All:true,
     Lunch:false,
@@ -30,15 +30,6 @@ export const FoodContextProvider = ({ children }) => {
     );
     setDisplayFood(filteredCards);
   }, [input]);   
-
-  useEffect(() => {
-    const newArray = Object.keys(category);
-    const trueCategory = newArray.filter((data) => { category[data] === true})[0];
-    const filteredCards = displayFood.filter(foodItem =>
-     trueCategory === 'All' || foodItem.category === trueCategory 
-    );
-    setDisplayFood(filteredCards);
-  }, [category])
   
   const values ={setInput,setCategory,setDisplayFood,input,category,displayFood,handleSearch}
   
