@@ -29,18 +29,27 @@ export const FoodContextProvider = ({ children }) => {
     foodItem.name.toLowerCase().includes(input.toLowerCase())
     );
     setDisplayFood(filteredCards);
-  }, [input]);   
+  }, [input]); 
   
-  const values ={setInput,setCategory,setDisplayFood,input,category,displayFood,handleSearch}
-  
+  const handleClick = (data) => {
+    for (const key in category) {
+      category[key] = false;
+    }
+    setCategory({...category, [data]: true});
+  };
+
   useEffect(() => {
     const newArray = Object.keys(category);
-    const trueCategory = newArray.filter((data) => { category[data] === true})[0];
+    const trueCategory = newArray.filter((data) => { return category[data] === true})[0];
     const filteredCards = displayFood.filter(foodItem =>
      trueCategory === 'All' || foodItem.category === trueCategory 
     );
     setDisplayFood(filteredCards);
-  }, [category])
+  }, [category]);
+  
+  const values ={setInput,setCategory,setDisplayFood,input,category,displayFood,handleSearch,handleClick}
+  
+
   
   return (
     <FoodContext.Provider value={values}>
