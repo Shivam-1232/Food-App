@@ -6,8 +6,14 @@ export const FoodContext = createContext(FoodData);
 const FoodContextProvider = ({ children }) => {
 
   const [Input, setInput] = useState();
-  const [category, setCategory] = useState();
-  const [displayFood, setDisplayFood] = useState();
+  const [category, setCategory] = useState({
+    All:true,
+    Lunch:false,
+    Dinner:false,
+    Breakfast:false,
+    Snacks:false,    
+   });
+  const [displayFood, setDisplayFood] = useState(FoodData);
 
   const values ={setInput,setCategory,setDisplayFood,Input,category,displayFood}
   
