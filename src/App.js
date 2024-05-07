@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import FoodContextProvider from "./context/foodContext";
 import "./App.css"
+import Category from "./components/category";
+import Card from "./components/card";
 
 
 const App = () => {
@@ -9,6 +11,8 @@ const App = () => {
    <FoodContextProvider>
     <div>
       <Navbar />
+      <Category/>
+      <Card/>
     </div>
    </FoodContextProvider>
   );
