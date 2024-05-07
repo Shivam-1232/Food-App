@@ -1,4 +1,4 @@
-import { createContext,useState } from "react";
+import { createContext,useState,useEffect } from "react";
 import FoodData from "../FoodData";
 
 export const FoodContext = createContext(FoodData);
@@ -18,9 +18,19 @@ const FoodContextProvider = ({ children }) => {
   const handleSearch = (e) => {
     e.preventDefault();
     const inputValue = e.target.value;
-    setSearchInput(inputValue);
+    setInput(inputValue);
   }
-
+  // useEffect(() =>{
+  //   const filterdisplayfood = displayFood.filter(Food => Food.name.toLowerCase().includes(Input.toLowerCase()))
+  //   setDisplayFood(filterdisplayfood)
+  // },[Input])
+  useEffect(() => { 
+    const filteredCards = displayFood.filter(foodItem =>
+    foodItem.name.toLowerCase().includes(Input.toLowerCase())
+    );
+    setDisplayFood(filteredCards);
+  }, [Input]);   
+  
   const values ={setInput,setCategory,setDisplayFood,Input,category,displayFood,handleSearch}
   
   

@@ -8,7 +8,7 @@ const Navbar = () => {
     <div className="navbar">
       <img src="./ficon.svg" className="App-logo" alt="logo" />
       <h1>Food App</h1>
-      <input type="text" placeholder="Search" 
+      <input type="text" placeholder="Search"
       value={input}
       onChange={handleSearch}
       />
