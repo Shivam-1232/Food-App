@@ -11,7 +11,8 @@ export const FoodContextProvider = ({ children }) => {
     Lunch:false,
     Dinner:false,
     Breakfast:false,
-    Snacks:false,    
+    Snacks:false,
+    Drinks:false,    
    });
   const [displayFood, setDisplayFood] = useState(FoodData);
   
@@ -40,13 +41,14 @@ export const FoodContextProvider = ({ children }) => {
 
   useEffect(() => {
     const newArray = Object.keys(category);
-    const trueCategory = newArray.filter((data) => { return category[data] === true})[0];
-    const filteredCards = displayFood.filter(foodItem =>
-     trueCategory === 'All' || foodItem.category === trueCategory 
+    const trueCategory = newArray.filter((data) =>category[data] === true)[0];
+    const filterCategory = FoodData.filter(
+      (foodItem) => trueCategory === "All" || foodItem.category === trueCategory
     );
-    setDisplayFood(filteredCards);
+    setDisplayFood(filterCategory);
+    setInput("");
   }, [category]);
-  
+
   const values ={setInput,setCategory,setDisplayFood,input,category,displayFood,handleSearch,handleClick}
   
 
