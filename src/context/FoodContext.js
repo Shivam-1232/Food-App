@@ -14,8 +14,14 @@ const FoodContextProvider = ({ children }) => {
     Snacks:false,    
    });
   const [displayFood, setDisplayFood] = useState(FoodData);
+  
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const inputValue = e.target.value;
+    setSearchInput(inputValue);
+  }
 
-  const values ={setInput,setCategory,setDisplayFood,Input,category,displayFood}
+  const values ={setInput,setCategory,setDisplayFood,Input,category,displayFood,handleSearch}
   
   
   return (
