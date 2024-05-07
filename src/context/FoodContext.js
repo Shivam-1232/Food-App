@@ -3,9 +3,9 @@ import FoodData from "../FoodData";
 
 export const FoodContext = createContext(FoodData);
 
-const FoodContextProvider = ({ children }) => {
+export const FoodContextProvider = ({ children }) => {
 
-  const [Input, setInput] = useState();
+  const [input, setInput] = useState('');
   const [category, setCategory] = useState({
     All:true,
     Lunch:false,
@@ -26,12 +26,12 @@ const FoodContextProvider = ({ children }) => {
   // },[Input])
   useEffect(() => { 
     const filteredCards = displayFood.filter(foodItem =>
-    foodItem.name.toLowerCase().includes(Input.toLowerCase())
+    foodItem.name.toLowerCase().includes(input.toLowerCase())
     );
     setDisplayFood(filteredCards);
-  }, [Input]);   
+  }, [input]);   
   
-  const values ={setInput,setCategory,setDisplayFood,Input,category,displayFood,handleSearch}
+  const values ={setInput,setCategory,setDisplayFood,input,category,displayFood,handleSearch}
   
   
   return (
@@ -40,5 +40,3 @@ const FoodContextProvider = ({ children }) => {
     </FoodContext.Provider>
   );
 };
-
-export default FoodContextProvider;

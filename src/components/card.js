@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
-import FoodData from '../FoodData'
 import { AiFillStar } from 'react-icons/ai'
-import { FoodContext } from '../context/foodContext'
+import { FoodContext } from '../context/FoodContext'
 
 const Card = () => {
     const {displayFood}= useContext(FoodContext)
