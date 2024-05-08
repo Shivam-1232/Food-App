@@ -52,7 +52,7 @@ const Card = () => {
           <Link to={`/recipe/${(name)}`} className="add-to-cart">
               Go to Recipe
             </Link>
-            
+            <button className="add-to-menu">Add to Cart</button>
         </div>
       </div>
     ))}
