@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer class="footer">
+    <footer className="footer">
     <aside>
       <img src="../ficon.svg" alt="logo" />
       <p>

@@ -1,19 +1,30 @@
-import { createContext,useState,useEffect } from "react";
+import { createContext,useState,useEffect, useReducer } from "react";
 import FoodData from "../FoodData";
+import FoodReducer from "./FoodReducer";
 
 export const FoodContext = createContext(FoodData);
 
 export const FoodContextProvider = ({ children }) => {
 
-  const [input, setInput] = useState('');
-  const [category, setCategory] = useState({
-    All:true,
+  const initialCategories= {
+    All:false,
     Lunch:false,
     Dinner:false,
     Breakfast:false,
     Snacks:false,
     Drinks:false,    
-   });
+   };
+  const [input, setInput] = useState('');
+  
+  // const [category, setCategory] = useState();
+  const initializeFunc = (args) => {
+    args.All = true;
+    return args
+  }
+  const [category, dispatch] = useReducer(FoodReducer, initialCategories,  initializeFunc);
+
+  console.log(category);
+
   const [displayFood, setDisplayFood] = useState(FoodData);
   
   const handleSearch = (e) => {
@@ -33,10 +44,11 @@ export const FoodContextProvider = ({ children }) => {
   }, [input]); 
   
   const handleClick = (data) => {
-    for (const key in category) {
-      category[key] = false;
-    }
-    setCategory({...category, [data]: true});
+    // for (const key in category) {
+    //   category[key] = false;
+    // }
+    // setCategory({...category, [data]: true});
+    dispatch({ type: data, initialCategories})
   };
 
   useEffect(() => {
@@ -49,7 +61,7 @@ export const FoodContextProvider = ({ children }) => {
     setInput("");
   }, [category]);
 
-  const values ={setInput,setCategory,setDisplayFood,input,category,displayFood,handleSearch,handleClick}
+  const values ={setInput,setDisplayFood,input,category,displayFood,handleSearch,handleClick}
   
 
   

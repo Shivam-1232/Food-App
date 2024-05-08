@@ -20,7 +20,7 @@ import { FoodContext } from '../context/FoodContext';
 // export default Category
 const Category = () => {
 
-  const {category, setCategory,handleClick} = useContext(FoodContext);
+  const {category, handleClick} = useContext(FoodContext);
 
   const categoryArr = Object.keys(category);
   
