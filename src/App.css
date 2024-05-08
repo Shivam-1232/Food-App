@@ -133,3 +133,88 @@
 .add-to-cart:hover {
   background-color: #059669; /* Dark green color */
 }
+/* RECIPE PAGE */
+
+.recipe-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-button {
+  padding: 8px 16px;
+  background-color: #34d399; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.home-button:hover {
+  background-color: #67b6ef; /* cyan blue color */
+}
+.recipe-page h2{
+  margin-top: 15px;
+  margin-left: 15px;
+  font-size: 35px;
+ }
+ 
+ .video-container {
+   width: 100%;
+   height: 400px;
+   margin-top: 28px;
+ }
+ 
+ .video-container iframe {
+   width: 100%;
+   height: 100%;
+ }
+ 
+ .recipe-details h2{
+   margin-top: 15px;
+   margin-left: 15px;
+   font-size: 2.3rem;
+ }
+ 
+ .recipe-details ol{
+   margin-top: 15px;
+   margin-left: 4rem;
+   font-size: 1.3rem;
+ }
+ 
+ .recipe-details ol li::marker{
+ content: "☞";
+ }
+ 
+ .recipe-details ol li{
+   margin-left: 1rem;
+ }
+ 
+ /* FOOTER */
+ 
+ .footer {
+   padding: 1.25rem; 
+  background-color: #afd2eb; /* Equivalent to bg-base-200 */
+   color:black; /* Equivalent to text-base-content */
+ }
+ 
+ .footer aside img {
+   width: 50px;
+   height: 50px;
+ }
+ 
+ .footer aside p {
+   margin-top: 0.5rem;
+   font-size: 1.3rem;
+ }
+ 
+ .copyright {
+   margin-top: 1rem;
+   text-align: center;
+ }
+ 
+ .copyright p{
+   font-size: 1.1rem;
+ }
