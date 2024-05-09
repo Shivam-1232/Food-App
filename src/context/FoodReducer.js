@@ -5,15 +5,15 @@ const FoodReducer = (state,action) => {
     switch (action.type) {
        case 'All': 
             return {...initialCategories, All: true};
-       case 'Lunch': return {...initialCategories, Lunch: true};
+       case 'Lunch': 
             return {... initialCategories, Lunch: true};
-       case 'Breakfast': return {...initialCategories, Breakfast: true};
+       case 'Breakfast': 
             return {...initialCategories, Breakfast: true}; 
-       case 'Dinner': return {...initialCategories, Dinner: true};
+       case 'Dinner': 
             return {...initialCategories,Dinner: true};
-       case 'Snacks': return {...initialCategories, Snacks: true};
+       case 'Snacks': 
              return {...initialCategories, Snacks: true};
-       case 'Drinks': return {...initialCategories, Drinks: true};
+       case 'Drinks': 
              return {...initialCategories, Drinks: true};
         default:
             return state;
