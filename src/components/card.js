@@ -32,7 +32,7 @@ import { Link } from 'react-router-dom'
 // export default Card
 const Card = () => {
   
-  const {displayFood} = useContext(FoodContext);
+  const {displayFood, setCartItems} = useContext(FoodContext);
 
   return (
     <div className="food-container">
@@ -52,7 +52,7 @@ const Card = () => {
           <Link to={`/recipe/${(name)}`} className="add-to-cart">
               Go to Recipe
             </Link>
-            <button className="add-to-cart">Add to Cart</button>
+            <button className="add-to-cart" onClick={() => setCartItems(prev => ([...prev, { id, img, name, price }]))}>Add to Cart</button>
         </div>
       </div>
     ))}

@@ -26,6 +26,7 @@ export const FoodContextProvider = ({ children }) => {
   console.log(category);
 
   const [displayFood, setDisplayFood] = useState(FoodData);
+  const [cartItems, setCartItems] = useState([]);
   
   const handleSearch = (e) => {
     e.preventDefault();
@@ -61,7 +62,7 @@ export const FoodContextProvider = ({ children }) => {
     setInput("");
   }, [category]);
 
-  const values ={setInput,setDisplayFood,input,category,displayFood,handleSearch,handleClick}
+  const values ={cartItems, setCartItems, setInput,setDisplayFood,input,category,displayFood,handleSearch,handleClick}
   
 
   

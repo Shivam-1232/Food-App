@@ -4,12 +4,21 @@ import Navbar from './Navbar'
 import Category from './category'
 import Footer from './Footer'
 import Cart from './Cart';
+import { useState } from 'react'
 
 const Layout = () => {
+  const[showCart, setShowCart] = useState(false);
+
+  const handlevisisble = () =>
+    {
+      setShowCart(!showCart);
+    }
+
+
   return (
     <div style={{position:"relative", maxWidth:"100vw", overflow:"hidden"}}>
-    <Cart/>
-    <Navbar/>
+    <Cart showCart={showCart} />
+    <Navbar toggle={handlevisisble}/>
     <Category/>
     <Outlet/>
     <Footer/>
