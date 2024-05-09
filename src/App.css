@@ -133,7 +133,41 @@
 .add-to-cart:hover {
   background-color: #059669; /* Dark green color */
 }
+
+/* CART */
+
+.cart{
+  top: 140px;
+  right:0;
+  width: clamp(200px, 30%, 600px);
+  background-color: white;
+  position: absolute;
+  height:600px;
+}
+
+.cart-details{                      
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 20px;     
+}   
+
+.close-icon{          
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.cart-icon{
   
+}
+
+
+
 /* RECIPE PAGE */
 
 .recipe-page {
@@ -219,3 +253,5 @@
  .copyright p{
    font-size: 1.1rem;
  }
+
+
