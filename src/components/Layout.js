@@ -2,12 +2,12 @@ import React from 'react'
 import { Outlet } from 'react-router'
 import Navbar from './Navbar'
 import Category from './category'
-import Footer from './Footer';
+import Footer from './Footer'
 import Cart from './Cart';
 
 const Layout = () => {
   return (
-    <div style={{position:"relative"}}>
+    <div style={{position:"relative", maxWidth:"100vw", overflow:"hidden"}}>
     <Cart/>
     <Navbar/>
     <Category/>

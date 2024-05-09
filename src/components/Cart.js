@@ -8,8 +8,8 @@ const Cart = () => {
   return (
     <div className="cart">
       <div className="cart-details">
-        <h3>Cart Details</h3>
-        <IoCloseSharp className="close-icon" onClick={()=> setShowCart(!showCart)}  />
+        <h2>Cart Details</h2>
+        <IoCloseSharp className="close-icon"/>
       </div>
     </div>
   );
