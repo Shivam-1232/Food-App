@@ -20,13 +20,18 @@ export const FoodContextProvider = ({ children }) => {
   const initializeFunc = (args) => {
     args.All = true;
     return args
-  }
+  };
+
   const [category, dispatch] = useReducer(FoodReducer, initialCategories,  initializeFunc);
 
   console.log(category);
 
   const [displayFood, setDisplayFood] = useState(FoodData);
+  // for cart items
   const [cartItems, setCartItems] = useState([]);
+
+// for show the cart panel
+  const [visibleCart, setVisibleCart] = useState(false);
   
   const handleSearch = (e) => {
     e.preventDefault();
@@ -62,7 +67,7 @@ export const FoodContextProvider = ({ children }) => {
     setInput("");
   }, [category]);
 
-  const values ={cartItems, setCartItems, setInput,setDisplayFood,input,category,displayFood,handleSearch,handleClick}
+  const values ={cartItems, setCartItems, setInput,setDisplayFood,input,category,displayFood,handleSearch,handleClick,cartItems,setCartItems,visibleCart,setVisibleCart,}
   
 
   

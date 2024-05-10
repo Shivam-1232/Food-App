@@ -179,6 +179,90 @@
   font-size: 2rem;
 }
 
+/* CART ITEM */
+
+.cart-items{
+  display: flex;
+  flex-wrap: wrap;
+  padding-top:40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-item {
+  display: flex;
+  gap: 1.3rem;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 8px;
+}
+.cart-item img {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 20px;
+  border-radius: 8px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+.cart-item-details h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #2d3748;
+}
+
+.cart-item-details h5 {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #4a5568;
+}
+
+.delete-icon {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #a0aec0;
+}
+
+/* CHECKOUT SUMMARY */
+
+.checkout-summary {
+  position: sticky;
+  bottom: 0;
+  left: 0; 
+  background-color: #f3efef;
+  padding: 20px;
+  z-index: 1;
+}
+
+.checkout-summary h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.checkout-summary hr {
+  border: 0;
+  border-top: 1px solid #000000;
+  margin: 10px 0;
+}
+
+.checkout-summary button {
+  background-color: rgb(52, 211, 153);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.checkout-summary button:hover {
+  background-color: #059669;;
+}
 
 
 /* RECIPE PAGE */
