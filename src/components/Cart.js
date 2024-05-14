@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { FoodContext } from "../context/FoodContext";
-import { MdDelete } from "react-icons/md";
-import { FiMinusCircle } from "react-icons/fi";
-import { FiPlusCircle } from "react-icons/fi";
+
+import CartItem from "./CartItem";
 
 const Cart = ({ showCart, toggle }) => {
 
-  const { cartItems,handleDelete, addToCart } = useContext(FoodContext);
+  const { cartItems, quntity } = useContext(FoodContext);
+
+  console.log(cartItems);
 
   return (
     <div className="cart" style={{ right: showCart ? '0px' : '-600px' }}>
@@ -17,24 +18,7 @@ const Cart = ({ showCart, toggle }) => {
         <IoCloseSharp className="close-icon" onClick={() => toggle()} />
         </div>
         <div className="cart-items">
-        {cartItems.map(item => (
-          <div key={item.id} className="cart-item">
-            <img scr={item.img} alt="img" />
-            <div className="cart-item-details">
-                <h4>{item.name}</h4>
-                <h5>₹{item.price}</h5>
-                <div className="quantity">
-                <FiMinusCircle className="minus-icon"/>
-                <span>{item.quantity}</span>
-                <button onClick={() => addToCart(item)}>
-                <FiPlusCircle className="plus-icon"/>
-                </button>
-                </div>
-              </div>
-              <MdDelete className="delete-icon" onClick={()=>handleDelete(item.id)}/>
-            </div>
-        ))}
-        
+        {cartItems.map(({id, img, price, name}) => <CartItem key={id} id={id} img={img} name={name} price={price} quantity={quntity.id} />)}
       </div>
       <div className="checkout-summary">
           <h3>Items:1</h3>
