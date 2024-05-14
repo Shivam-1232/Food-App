@@ -2,7 +2,7 @@ import { createContext,useState,useEffect, useReducer } from "react";
 import FoodData from "../FoodData";
 import FoodReducer from "./FoodReducer";
 
-export const FoodContext = createContext(FoodData);
+export const FoodContext = createContext();
 
 export const FoodContextProvider = ({ children }) => {
 
@@ -31,13 +31,36 @@ export const FoodContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
 // for show the cart panel
-  const [visibleCart, setVisibleCart] = useState(false);
+const [visibleCart, setVisibleCart] = useState(false);
+
+const toggleCartVisibility = () => {
+  setVisibleCart(!visibleCart);
+};
   
   const handleSearch = (e) => {
     e.preventDefault();
     const inputValue = e.target.value;
     setInput(inputValue);
   }
+
+  //to change qunatity in cart 
+ 
+  const addToCart = (itemToAdd) => {
+    const existingItem = cartItems.find(item => item.id === itemToAdd.id);
+  
+    if (existingItem) {
+      // Item already exists in the cart, increase quantity
+      const updatedCartItems = cartItems.map(item =>
+        item.id === itemToAdd.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      setCartItems(updatedCartItems);
+    } else {
+      // Item doesn't exist in the cart, add with quantity 1
+      const updatedCartItems = [...cartItems, { ...itemToAdd, quantity: 1 }];
+      setCartItems(updatedCartItems);
+    }
+  };  
+
   // useEffect(() =>{
   //   const filterdisplayfood = displayFood.filter(Food => Food.name.toLowerCase().includes(Input.toLowerCase()))
   //   setDisplayFood(filterdisplayfood)
@@ -72,7 +95,23 @@ export const FoodContextProvider = ({ children }) => {
     setInput("");
   }, [category]);
 
-  const values ={cartItems, setCartItems, setInput,setDisplayFood,input,category,displayFood,handleSearch,handleClick,cartItems,setCartItems,visibleCart,setVisibleCart,handleDelete}
+  const values ={
+    cartItems,
+    setCartItems, 
+    setInput,
+    setDisplayFood,
+    input,category,
+    displayFood,
+    handleSearch,
+    handleClick,
+    cartItems,
+    setCartItems,
+    visibleCart,
+    setVisibleCart,
+    handleDelete,
+    addToCart,
+    toggleCartVisibility
+  }
   
 
   
