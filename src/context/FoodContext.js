@@ -27,9 +27,7 @@ export const FoodContextProvider = ({ children }) => {
   const [displayFood, setDisplayFood] = useState(FoodData);
   // for cart items
   const [cartItems, setCartItems] = useState([]);
-  const [quntity, setQuantity] = ([]);
-
-
+  const [quantity, setQuantity] = useState({});
   
   const handleSearch = (e) => {
     e.preventDefault();
@@ -50,18 +48,11 @@ export const FoodContextProvider = ({ children }) => {
     const index = cartItems.findIndex(testIdFucntion);
 
     if (index === -1) {
-      // Item doesn't exist in the cart, add with quantity 1
       const updatedCartItems = [...cartItems, itemToAdd];
       setCartItems(updatedCartItems);
       setQuantity(prev => ({...prev, [itemToAdd.id]: 1}));
     } else {
-      // const updatedCartItems = [...cartItems, addQuantity(cartItems[index])];
-      // let existingItem = cartItems[index];
-      // existingItem.quantity = existingItem.quantity + 1;
-      // cartItems[index] = existingItem;
-      // console.log(cartItems);
-      setQuantity(prev => ({...prev, [prev.itemToAdd.id]: prev.itemToAdd.id + 1}));
-      // const updatedCartItems = [...cartItems, { ...itemToAdd, quantity: 1 }];
+      setQuantity(prev => ({...prev, [itemToAdd.id]: prev[itemToAdd.id] + 1}))
     }
   };  
 
@@ -112,7 +103,7 @@ export const FoodContextProvider = ({ children }) => {
     setCartItems,
     handleDelete,
     addToCart,
-    quntity
+    quantity
   }
   
 

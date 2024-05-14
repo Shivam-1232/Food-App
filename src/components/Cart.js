@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { FoodContext } from "../context/FoodContext";
-
 import CartItem from "./CartItem";
+
 
 const Cart = ({ showCart, toggle }) => {
 
-  const { cartItems, quntity } = useContext(FoodContext);
+  const { cartItems, quantity } = useContext(FoodContext);
 
   console.log(cartItems);
 
@@ -18,7 +18,7 @@ const Cart = ({ showCart, toggle }) => {
         <IoCloseSharp className="close-icon" onClick={() => toggle()} />
         </div>
         <div className="cart-items">
-        {cartItems.map(({id, img, price, name}) => <CartItem key={id} id={id} img={img} name={name} price={price} quantity={quntity.id} />)}
+        {cartItems.map(item => <CartItem key={item.id} id={item.id} img={item.img} name={item.name} price={item.price} quantity={quantity[item.id]} />)}
       </div>
       <div className="checkout-summary">
           <h3>Items:1</h3>
