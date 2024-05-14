@@ -57,6 +57,11 @@ export const FoodContextProvider = ({ children }) => {
     dispatch({ type: data, initialCategories})
   };
 
+  const handleDelete = (id) => {
+    const newCartItems = cartItems.filter((item) => item.id !== id);
+    setCartItems(newCartItems);
+  };
+
   useEffect(() => {
     const newArray = Object.keys(category);
     const trueCategory = newArray.filter((data) =>category[data] === true)[0];
@@ -67,7 +72,7 @@ export const FoodContextProvider = ({ children }) => {
     setInput("");
   }, [category]);
 
-  const values ={cartItems, setCartItems, setInput,setDisplayFood,input,category,displayFood,handleSearch,handleClick,cartItems,setCartItems,visibleCart,setVisibleCart,}
+  const values ={cartItems, setCartItems, setInput,setDisplayFood,input,category,displayFood,handleSearch,handleClick,cartItems,setCartItems,visibleCart,setVisibleCart,handleDelete}
   
 
   

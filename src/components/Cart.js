@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { FoodContext } from "../context/FoodContext";
 import { MdDelete } from "react-icons/md";
@@ -7,7 +7,7 @@ import { FiPlusCircle } from "react-icons/fi";
 
 const Cart = ({ showCart }) => {
 
-  const { cartItems } = useContext(FoodContext);
+  const { cartItems,visibleCart,setVisibleCart,handleDelete } = useContext(FoodContext);
 
   return (
     <div className="cart" style={{ right: showCart ? '0px' : '-600px' }}>
@@ -30,7 +30,7 @@ const Cart = ({ showCart }) => {
                 <FiPlusCircle className="plus-icon"/>
                 </div>
               </div>
-              <MdDelete className="delete-icon"/>
+              <MdDelete className="delete-icon" onClick={()=>handleDelete(item.id)}/>
             </div>
         ))}
         <div className="checkout-summary">
