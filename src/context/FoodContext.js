@@ -24,18 +24,11 @@ export const FoodContextProvider = ({ children }) => {
 
   const [category, dispatch] = useReducer(FoodReducer, initialCategories,  initializeFunc);
 
-  console.log(category);
-
   const [displayFood, setDisplayFood] = useState(FoodData);
   // for cart items
   const [cartItems, setCartItems] = useState([]);
 
-// for show the cart panel
-const [visibleCart, setVisibleCart] = useState(false);
 
-const toggleCartVisibility = () => {
-  setVisibleCart(!visibleCart);
-};
   
   const handleSearch = (e) => {
     e.preventDefault();
@@ -46,18 +39,28 @@ const toggleCartVisibility = () => {
   //to change qunatity in cart 
  
   const addToCart = (itemToAdd) => {
-    const existingItem = cartItems.find(item => item.id === itemToAdd.id);
-  
-    if (existingItem) {
-      // Item already exists in the cart, increase quantity
-      const updatedCartItems = cartItems.map(item =>
-        item.id === itemToAdd.id ? { ...item, quantity: item.quantity + 1 } : item
-      );
-      setCartItems(updatedCartItems);
-    } else {
+
+    // let existingIDs = cartItems.map(item => item.id);
+
+    // let isIncluded = existingIDs.includes(itemToAdd.id);
+
+    const testIdFucntion = (input) => {
+      return input.id === itemToAdd.id
+    }
+
+    const index = cartItems.findIndex(testIdFucntion);
+
+    if (index === -1) {
       // Item doesn't exist in the cart, add with quantity 1
       const updatedCartItems = [...cartItems, { ...itemToAdd, quantity: 1 }];
       setCartItems(updatedCartItems);
+    } else {
+      const existingItem = cartItems[index];
+      existingItem.quantity = existingItem.quantity + 1;
+      cartItems[index] = existingItem;
+      console.log(cartItems);
+      setCartItems(cartItems);
+      // const updatedCartItems = [...cartItems, { ...itemToAdd, quantity: 1 }];
     }
   };  
 
@@ -106,11 +109,8 @@ const toggleCartVisibility = () => {
     handleClick,
     cartItems,
     setCartItems,
-    visibleCart,
-    setVisibleCart,
     handleDelete,
     addToCart,
-    toggleCartVisibility
   }
   
 

@@ -17,7 +17,7 @@ const Layout = () => {
 
   return (
     <div style={{position:"relative", maxWidth:"100vw", overflow:"hidden"}}>
-    <Cart showCart={showCart} />
+    <Cart showCart={showCart} toggle={handlevisisble} />
     <Navbar toggle={handlevisisble}/>
     <Category/>
     <Outlet/>
