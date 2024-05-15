@@ -6,21 +6,19 @@ import { FoodContext } from "../context/FoodContext";
 
 const CartItem = ({ id, img, name, price, quantity }) => {
 
-    const { handleDelete, addToCart } = useContext(FoodContext);
+  const { handleDelete, addToCart, decreaseQuantity } = useContext(FoodContext);
 
 
   return (
     <div className="cart-item">
-      <img scr={img} alt="img" />
+      <img src={img} alt="img" />
       <div className="cart-item-details">
           <h4>{name}</h4>
           <h5>₹{price}</h5>
           <div className="quantity">
-          <FiMinusCircle className="minus-icon"/>
+          <FiMinusCircle className="minus-icon" onClick={()=> decreaseQuantity(id)}/>
           <span>{quantity}</span>
-          <button onClick={() => addToCart({ id, name, price, quantity, img})}>
-          <FiPlusCircle className="plus-icon"/>
-          </button>
+          <FiPlusCircle className="plus-icon" onClick={() => addToCart({ id, name, price, quantity, img})}/>
           </div>
         </div>
         <MdDelete className="delete-icon" onClick={()=>handleDelete(id)}/>

@@ -54,7 +54,35 @@ export const FoodContextProvider = ({ children }) => {
     } else {
       setQuantity(prev => ({...prev, [itemToAdd.id]: prev[itemToAdd.id] + 1}))
     }
-  };  
+  }; 
+  
+  // decerese the quantity based on item is present in cart or not
+
+const decreaseQuantity = (itemId) => {
+ 
+  // Calculate the updated quantity for the given item ID
+  const updatedquantity = quantity[itemId] - 1;  
+  
+  //Check if the updated quantity is less than or equal to 0
+
+  if (updatedquantity <= 0) {
+    //If the updated quantity is 0 or less, remove the item from cartItems
+    const newCartItems = cartItems.filter((cartItem) => cartItem.id !== itemId);
+    setCartItems(newCartItems);
+
+    //Also remove the item from the quantity state
+    setQuantity(prev => {
+      const updatedQuantity = {...prev};
+      delete updatedQuantity[itemId];
+      return updatedQuantity;
+    })
+  }
+  else {
+    //If the updated quantity is more than 0, simply update the quantity state
+    setQuantity(prev => ({...prev, [itemId]: updatedquantity}))
+  }
+
+};
 
   // useEffect(() =>{
   //   const filterdisplayfood = displayFood.filter(Food => Food.name.toLowerCase().includes(Input.toLowerCase()))
@@ -103,7 +131,8 @@ export const FoodContextProvider = ({ children }) => {
     setCartItems,
     handleDelete,
     addToCart,
-    quantity
+    quantity,
+    decreaseQuantity
   }
   
 

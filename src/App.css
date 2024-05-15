@@ -7,7 +7,7 @@
 }
 
 .body{
-  background-color: #94a4eb;
+  background-color: #ffffff;
 }
 
 :root {
@@ -181,9 +181,16 @@
 }
 
 .close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   cursor: pointer;
   margin-left: auto;
   font-size: 2rem;
+}
+
+.close-icon:hover {
+  color: rgb(255, 0, 0);
 }
 
 /* CART ITEM */
@@ -218,13 +225,23 @@ height: 75%;
 .cart-item-details h4 {
   margin: 0;
   font-size: 18px;
-  color: #2d3748;
+  color: #13284b;
 }
 
 .cart-item-details h5 {
   margin: 5px 0;
   font-size: 16px;
   color:rgb(36, 212, 36);
+}
+
+.cart-item-details .quantity .minus-icon:hover {
+  cursor: pointer;
+  color: rgb(255, 0, 0);
+}
+
+.cart-item-details .quantity .plus-icon:hover {
+  cursor: pointer;
+  color: rgb(255, 0, 0);
 }
 
 .cart-item-details .quantity {
