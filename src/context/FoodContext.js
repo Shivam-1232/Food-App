@@ -127,8 +127,6 @@ const decreaseQuantity = (itemId) => {
     displayFood,
     handleSearch,
     handleClick,
-    cartItems,
-    setCartItems,
     handleDelete,
     addToCart,
     quantity,

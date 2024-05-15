@@ -1,22 +1,39 @@
-import React, { useContext } from "react";
+import React, { useContext,useRef } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { FoodContext } from "../context/FoodContext";
 import CartItem from "./CartItem";
+import { Transition } from 'react-transition-group';
 
+const duration = 400;
+
+const defaultStyle = {
+  transition: `right ${duration}ms ease-in-out`,
+  // right:"0px",
+};
+
+const transitionStyles = {
+  entering: { right: "-600px" },
+  entered: { right: "0px" },
+  exiting: { right: "0px" },
+  exited: { right: "-600px" },
+};
 
 const Cart = ({ showCart, toggle }) => {
    const { cartItems, quantity } = useContext(FoodContext);
+  
+   const nodeRef = useRef(null);
 
   // Calculate total number of items
 const totalItems = cartItems.reduce((sum, item) => sum + quantity[item.id], 0);
 
 // Calculate total amount
 const totalAmount = cartItems.reduce((sum, item) => sum + (item.price * quantity[item.id]), 0);
-
-  console.log(cartItems);
-
+ 
   return (
-    <div className="cart" style={{ right: showCart ? '0px' : '-600px' }}>
+    <Transition nodeRef={nodeRef} in={showCart} timeout={duration}>
+      {(state)=> (
+        <div className="cart" style={{ ...defaultStyle, ...transitionStyles[state]}}
+        ref={nodeRef}>
       <div className="cart-details">
         <div className="cart-heading">
         <h3>Cart Details</h3>
@@ -40,6 +57,9 @@ const totalAmount = cartItems.reduce((sum, item) => sum + (item.price * quantity
           <button className="checkout-button">Buy Now</button>
         </div>
     </div>
+      )}
+    
+    </Transition>
   );
 };
 
