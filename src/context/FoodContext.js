@@ -27,7 +27,13 @@ export const FoodContextProvider = ({ children }) => {
   const [displayFood, setDisplayFood] = useState(FoodData);
   // for cart items
   const [cartItems, setCartItems] = useState([]);
+
+  //for quantity
   const [quantity, setQuantity] = useState({});
+
+  // for show modal in card 
+const [showModal, setShowModal] = useState(false);
+
   
   const handleSearch = (e) => {
     e.preventDefault();
@@ -130,7 +136,9 @@ const decreaseQuantity = (itemId) => {
     handleDelete,
     addToCart,
     quantity,
-    decreaseQuantity
+    decreaseQuantity,
+    showModal,
+    setShowModal,
   }
   
 
