@@ -1,17 +1,17 @@
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
 import { FoodContext } from "../context/FoodContext";
 import { IoCloseSharp } from "react-icons/io5";
 
 const Recipe = () => {
-  const { name } = useParams();
-  const {setShowModal} = useContext(FoodContext);
+  const {setShowModal,recipeItems} = useContext(FoodContext);
 
   return (
     <div className="recipe-page">
       {/* Home button to navigate back to the home page */}
       <IoCloseSharp onClick={()=>setShowModal(false)} className="close-icon"/>
-      <h2>Recipe Details of {name}</h2>
+      <h2>Recipe Details of {recipeItems?.name}</h2>
+      <h4>Description of this food: {recipeItems?.desc}</h4>
+      <div className="details">
       <div className="video-container">
         <iframe
           width="560"
@@ -34,6 +34,7 @@ const Recipe = () => {
           <li>1 egg</li>
           <li>Salt and pepper to taste</li>
         </ol>
+      </div>
       </div>
     </div>
   );
