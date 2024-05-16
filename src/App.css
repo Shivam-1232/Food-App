@@ -218,9 +218,18 @@
 /* CART ITEM */
 
 .cart-items {
-  overflow-y: auto;
+  flex-grow: 1;
   padding: 10px;
-  height: 75%;
+  overflow: auto;
+  height: 412px;
+}
+
+.empty-cart h3 {
+  font-size: 2rem;
+  margin-top: 10rem;
+  color: rgb(0, 0, 0);
+  font-weight: 100;
+  margin-left: 8rem;
 }
 
 .cart-item {
