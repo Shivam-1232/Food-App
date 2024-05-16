@@ -280,7 +280,8 @@
   gap: 1rem;
   align-items: center;
 }
-g .cart-item-details .quantity span {
+
+.cart-item-details .quantity span {
   font-size: 1.2rem;
   font-weight: 100;
 }
@@ -340,9 +341,24 @@ g .cart-item-details .quantity span {
 
 /* RECIPE PAGE */
 
+.close-icon {
+  position: absolute;
+  top: 5rem;
+  right: 2rem;
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+
+.close-icon:hover {
+ color: rgb(255, 0, 0);
+}
+
+
 .recipe-page {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  height: calc(100vh - 160px);
 }
 
 .home-button {
@@ -375,7 +391,6 @@ g .cart-item-details .quantity span {
   grid-template-rows: 1fr;
   grid-column-gap: 9px;
   margin-top: 2rem;
-
 }
 
 .video-container {
