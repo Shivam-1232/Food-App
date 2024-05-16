@@ -1,24 +1,10 @@
 import React, { useContext } from 'react'
 import { AiFillStar } from 'react-icons/ai'
 import { FoodContext } from '../context/FoodContext'
-import Modal from "react-modal";
-import Recipe from './Recipe';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
-const customStyles = {
-  content: {
-    // position: 'absolute',
-    top: "120px",
-    left: "0",
-    right: "0",
-    bottom: "0",
-    border: "none",
-    // overflow: 'auto',
-    // WebkitOverflowScrolling: 'touch',
-  },
-};
 
 // const customStyles = {
 //   content: {
@@ -58,7 +44,7 @@ const customStyles = {
 
 // export default Card
 const Card = () => {
-  const { displayFood, addToCart, showModal, setShowModal,setRecipeItems } =
+  const { displayFood, addToCart, setShowModal,setRecipeItems } =
     useContext(FoodContext);
 
 const handleClick = (name,desc) =>{
@@ -73,9 +59,6 @@ const handleClick = (name,desc) =>{
       <div className="food-container">
         {displayFood.map(({ id, img, name, desc, price, rating }) => (
           <div key={id} className="card">
-            <Modal isOpen={showModal} style={customStyles}>
-              <Recipe name={name} desc={desc} />
-            </Modal>
             <img src={img} alt="" className="food-image" />
             <div className="details">
               <h2>{name}</h2>

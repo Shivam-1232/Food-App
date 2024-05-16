@@ -40,6 +40,11 @@ const [showModal, setShowModal] = useState(false);
     const inputValue = e.target.value;
     setInput(inputValue);
   }
+
+  // for set the recipe items in modal
+
+const [recipeItems, setRecipeItems] = useState(null);
+
  
   const addToCart = (itemToAdd) => {
 
@@ -139,6 +144,8 @@ const decreaseQuantity = (itemId) => {
     decreaseQuantity,
     showModal,
     setShowModal,
+    recipeItems,
+    setRecipeItems,
   }
   
 

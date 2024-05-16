@@ -25,6 +25,7 @@ const Layout = () => {
       right: "0",
       bottom: "0",
       border: "none",
+      background: "transparent",
     },
   };
 
