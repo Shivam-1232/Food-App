@@ -116,18 +116,26 @@
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 500px;
-  border-radius: 15px;
+  height: 320px;
+  border-radius: 20px;
   overflow: hidden;
   background-color: white;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+.container{
+  flex:2;
+  width: 150px;
+  align-self: center;
+  align-items: center;
+
+}
+
+
 .food-image {
-  flex: 5;
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 130px;
+  object-fit: contain; 
 
 }
 
@@ -135,58 +143,63 @@
   transform: scale(1.1);
 }
 
-.content{
-  flex: 3;
+.content {
+  flex: 2;
   display: flex;
   flex-direction: column;
   padding: 10px;
   justify-content: space-between;
 }
 
-.details h2 {
-  margin: 0;
+.heading-details {
+  text-align: center;
 }
 
-.price {
+.heading-details h2{
   font-size: 1.4rem;
-  font-weight: 10;
-  color: #34d399; /* Green color */
 }
 
-.description {
-  margin: 10px;
-  flex: 1;
-}
-
-.rating-container {
+.price-rating {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.price{
+  font-size: 1.2rem;
+  font-weight: 10;
+  color: #34d399;
+}
+
 .rating .star {
   fill: #ffd700;
-  font-size: 1.4rem; 
+  font-size: 1.2rem;
+}
+
+.description{
+  font-size: 1rem;
 }
 
 .button-controller {
   display: flex;
   justify-content: space-between;
 }
- 
- /* addtocart classname is common for both   */
 
+.go-to-recipe,
 .add-to-cart {
-  padding: 8px 16px;
-  background-color: #34d399; /* Green color */
-  color: white;
+  flex: 1;
+  padding: 10px;
   border: none;
-  border-radius: 8px;
+  background-color: #34d399;
+  color: #fff;
+  border-radius: 5px;
   cursor: pointer;
+  margin: 0 5px;
 }
 
+.go-to-recipe:hover,
 .add-to-cart:hover {
-  background-color: #059669; /* Dark green color */
+  background-color: #059669;
 }
 
 /* CART */
