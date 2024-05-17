@@ -6,8 +6,8 @@
   font-family: "Radio Canada Big", sans-serif;
 }
 
-.body {
-  background-color: #56d7e0;
+body {
+  background-color: #D3C5E5;
 }
 
 :root {
@@ -31,8 +31,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #afd2eb;
+  background-color: #735DA5;
   height: var(--navbarHt);
+  width: 100%;
+  position: fixed;
 }
 
 .navbar img {
@@ -207,11 +209,11 @@
 .cart {
   top: var(--navbarHt);
   width: clamp(200px, 30%, 600px);
-  background-color: rgb(215, 215, 215);
-  position: absolute;
+  background-color: rgb(231, 214, 241);
+  position: fixed;
   height: calc(100vh - var(--navbarHt));
-  border: 1px solid black;
-  z-index: 1000;
+  /* border: 1px solid black; */
+  /* z-index: 1000; */
   /* transition: right 0.5s ease-in-out; */
 }
 
@@ -219,26 +221,34 @@
   transform: translateX(0);
 }
 
-.cart-details {
-  height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
+/* .cart-details {
+  /* height: 100%; */
+  /* display: flex;
+  flex-direction: column;
+  position: relative; */
+  /* flex-flow: column nowrap;
   justify-content: space-between;
-  align-items: center;
-}
+  align-items: center; */
 
 .cart-details h2 {
-  margin-top: 10px;
+  display: flex;
+  margin-top: 1rem;
+  /* margin-top: 10px;
   margin-left: 10rem;
+  font-size: 1.5rem; */
+}
+
+.cart-details h3 {
+  margin-top: 10px;
   font-size: 1.5rem;
+  margin-left: 9.9rem;
 }
 
 .close-icon {
   position: absolute;
-  top: 10px;
+  margin-bottom: 10rem;
   right: 10px;
   cursor: pointer;
-  margin-left: auto;
   font-size: 2rem;
 }
 
@@ -372,7 +382,7 @@
 
 /* RECIPE PAGE */
 
-.close-icon {
+.close-icon1 {
   position: absolute;
   top: 5rem;
   right: 2rem;
@@ -380,7 +390,7 @@
   font-size: 2.5rem;
 }
 
-.close-icon:hover {
+.close-icon1:hover {
  color: rgb(255, 0, 0);
 }
 

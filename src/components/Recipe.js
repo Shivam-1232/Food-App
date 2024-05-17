@@ -8,7 +8,7 @@ const Recipe = () => {
   return (
     <div className="recipe-page">
       {/* Home button to navigate back to the home page */}
-      <IoCloseSharp onClick={()=>setShowModal(false)} className="close-icon"/>
+      <IoCloseSharp onClick={()=>setShowModal(false)} className="close-icon1"/>
       <h2>Recipe Details of {recipeItems?.name}</h2>
       <h4>Description of this food: {recipeItems?.desc}</h4>
       <div className="details">
