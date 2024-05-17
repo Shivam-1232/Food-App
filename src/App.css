@@ -107,30 +107,40 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: space-around;
+  padding: 20px;
+  transition: all 0.4s ease-in-out;
 }
 
 .card {
-  width: calc(
-    20% - 20px
-  ); /* Adjust card width based on number of cards in one row and gap */
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 500px;
+  border-radius: 15px;
+  overflow: hidden;
   background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  margin: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;;
 }
 
 .food-image {
-  width: 260px;
-  height: 150px;
+  flex: 5;
+  width: 100%;
+  height: auto;
   object-fit: cover;
-  border-radius: 5px;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease-in-out;
+
 }
 
 .food-image:hover {
   transform: scale(1.1);
+}
+
+.content{
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: space-between;
 }
 
 .details h2 {
@@ -138,11 +148,14 @@
 }
 
 .price {
+  font-size: 1.4rem;
+  font-weight: 10;
   color: #34d399; /* Green color */
 }
 
 .description {
-  font-size: 0.875rem;
+  margin: 10px;
+  flex: 1;
 }
 
 .rating-container {
@@ -153,10 +166,15 @@
 
 .rating .star {
   fill: #ffd700;
-  height: 25px;
-  width: 25px;
-  margin-top: 15px;
+  font-size: 1.4rem; 
 }
+
+.button-controller {
+  display: flex;
+  justify-content: space-between;
+}
+ 
+ /* addtocart classname is common for both   */
 
 .add-to-cart {
   padding: 8px 16px;
