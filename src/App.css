@@ -34,7 +34,6 @@ body {
   background-color: #735DA5;
   height: var(--navbarHt);
   width: 100%;
-  position: fixed;
 }
 
 .navbar img {
@@ -474,7 +473,7 @@ body {
 
 .footer {
   padding: 1.25rem;
-  background-color: #afd2eb; /* Equivalent to bg-base-200 */
+  background-color: #735DA5; /* Equivalent to bg-base-200 */
   color: black; /* Equivalent to text-base-content */
 }
 
@@ -495,4 +494,134 @@ body {
 
 .copyright p {
   font-size: 1.1rem;
+}
+
+/*media qu for responsive */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    padding: 10px;
+    height: auto;
+  }
+
+  .navbar img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .navbar h1 {
+    font-size: 25px;
+    margin-left: 40px;
+  }
+
+  .navbar input {
+    width: 122px;
+    margin-right: 20px;
+
+  }
+
+  .navbar input::placeholder{
+  font-size:15px;
+  }
+  .cart-icon {
+    position: fixed;
+    height: 3rem;
+    width: 3rem;
+    bottom: 20px;
+    right: 20px;
+    margin-right: 0;
+    margin-top: 0;
+    background-color: rgb(210, 190, 212);
+    border-radius: 45%;
+  }
+  
+  .category-buttons {
+    flex-direction: row;
+    overflow-x: scroll;
+   scroll-behavior: smooth;
+  }
+
+  .category-buttons button {
+    padding: 0.8rem;
+  }
+
+  .food-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart{
+    height:100vh;
+    width:100%;
+    top:0;
+    z-index:1;
+  }
+  
+  .cart-heading h3{
+    /* text-align: center; */
+    margin-left: 7rem;
+    font-size: 1.7rem;
+  }
+  
+  .cart-items{
+    height: 570px;
+  }
+
+  .empty-cart h3{
+    margin-top: 17rem;
+    margin-left: 5rem;
+  }
+
+  .checkout-summary .checkout-button{
+    width: 295px;
+  }
+
+  .close-icon1{
+    margin-top:0.8rem;
+    font-size: 2.5rem;
+  }
+
+
+  .recipe-page{
+   padding: 1rem;
+  }
+
+  .recipe-page h2{
+    font-size: 1.7rem;
+    margin-bottom: 3px;
+  }
+ 
+  .recipe-page h4{
+    font-size: 1.4rem;
+    font-weight: 50;
+  }
+
+  .recipe-page h4 span{
+    font-size: 0.9rem;
+    display: flex;
+    font-weight: 10;
+  }
+
+  .details{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .video-container{
+    width: 300px;
+    height: 200px;
+    margin-top: -10px;
+  }
+
+  .recipe-details h2{
+  font-size: 1.3rem;
+  font-weight: 20;
+  }
+
+  .recipe-details ol{
+    font-size: 0.7rem;
+    margin-left: 1rem;
+  }
+
 }
