@@ -1,11 +1,11 @@
 import React from "react";
 import { FoodContextProvider } from './context/FoodContext';
 import "./App.css"
-import Card from "./components/card";
-import Recipe from "./components/Recipe"; 
+import Card from "./components/card"; 
 import{ BrowserRouter as Router, Routes, Route,} from "react-router-dom";
 import Layout from "./components/Layout";
 import { ToastContainer } from "react-toastify";
+import Checkout from "./components/Checkout";
 
 
 const App = () => {
@@ -22,8 +22,8 @@ const App = () => {
         <Routes>
           <Route element={<Layout/>}>
           <Route path="/" element={<Card/>} />
-          <Route path="/recipe/:name" element={<Recipe/>} />
           </Route>
+          <Route path="/checkout" element={<Checkout/>} />
         </Routes>
       </Router>
     </FoodContextProvider>

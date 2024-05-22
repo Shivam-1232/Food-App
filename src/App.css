@@ -469,6 +469,238 @@ body {
   margin-left: 1rem;
 }
 
+/* CHECKOUT */
+
+.checkout{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  height: calc(100vh - 5rem);
+  
+}
+
+.heading h1{
+  font-size: 2.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.checkout-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-end;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+  width:60%;
+}
+
+.delivery-section,
+.payment-section,
+.order-review {
+  width: 680px;
+  margin-bottom: 1rem;
+}
+
+.delivery-section {
+  background-color: #ffffff;
+  height: 420px;
+}
+
+ /* DELIVERY SECTION */
+
+.delivery-heading{
+  color:white;
+  font-size: 1rem;
+  font-weight: 10;
+  padding:0.7rem;
+  background-color: #735DA0;
+}
+
+.address-section{
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.address-section .name{
+   height:2.2rem;
+   border: 2px solid #e6e2e2;
+}
+
+.Mobile-number{
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.Mobile-number .number {
+  height: 2.2rem;
+  border: 2px solid #e6e2e2;
+  width: 15rem;
+}
+
+.Mobile-number .email {
+  height: 2.2rem;
+  border: 2px solid #e6e2e2;
+  width: 24rem;
+  margin-left: 1rem;
+}
+
+.address-section .address{
+  border: 2px solid #e6e2e2;
+}
+
+.save-button{
+  margin-left:33rem;
+  background-color: #34d399;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  text-align: center;  
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.save-button:hover{
+  background-color: #059669;
+}
+
+
+ /* PAYMENT SECTION */
+.payment-section h2 {
+  background-color: #735da0;
+  color: #fff;
+  height: 40px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  padding:0.6rem;
+  width:660px;
+
+}
+
+.payment-section form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 1rem;
+}
+
+.payment-section hr {
+  border: 1px solid #e6e2e2;
+  margin-bottom: 0.5rem;
+}
+
+.payment-method {
+  margin-bottom: 15px;
+}
+
+.payment-method label{
+  margin-left: 1rem;
+}
+
+.payment-method small{
+  margin-left: 1.9rem;
+}
+
+
+.payment-method img {
+  height: 28px;
+}
+
+.review-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #34d399;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.review-button:hover {
+  background-color: #059669;
+}
+
+/* PAYMENT SECTION ENDS */
+
+.order-review {
+  background-color: #735da0;
+  color: #fff;
+  height: 40px;
+  font-size: 1.3rem;
+  font-weight: 10;
+  padding:0.6rem;
+  width:660px;
+}
+
+.cartpage{
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  background-color: #ffffff;
+  width:300px;
+  height: calc(100vh - 14rem);
+}
+
+.cart-heading1{
+  color:black;
+  font-size: 1rem;
+  font-weight: 10;
+  padding:0.7rem;
+  background-color: rgb(202, 199, 199);
+}
+
+.cart-total{
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cart-total p,h4{
+  font-size: 1rem;
+  margin: 0;
+}
+
+.cart-items-container {
+  max-height: 320px; /* Adjust as needed */
+  overflow-y: auto;
+}
+
+.cart-total h4 span{
+  color: #34d399;
+}
+
+.cart-heading2{
+  color:black;
+  font-size: 1rem;
+  padding: 0.7rem;
+}
+
+.empty-cart1{
+  font-size: 1.7rem;
+  margin-top: 6.5rem;
+  color: rgb(152, 148, 148);
+  font-weight: 10;
+  margin-left: 4rem;
+}
+
+
+
+
 /* FOOTER */
 
 .footer {
