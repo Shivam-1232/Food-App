@@ -348,14 +348,22 @@ body {
 /* CHECKOUT SUMMARY */
 
 .checkout-summary {
-  background-color: #f3efef;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  background-color: #fefcfc;
   padding: 20px;
   z-index: 1;
+  height: 20%;
 }
 
-.checkout-summary h3 {
+.checkout-summary h4 {
   font-size: 1.2rem;
   margin-bottom: 5px;
+}
+
+.checkout-summary h4 span {
+  color: red;
 }
 
 .checkout-summary hr {
@@ -364,64 +372,58 @@ body {
   margin: 10px 0;
 }
 
-.checkout-summary button {
+.checkout-summary .checkout-button {
   background-color: rgb(52, 211, 153);
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  width: 100%;
+  width: 88%;
   font-size: 1.2rem;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.checkout-summary button:hover {
+.checkout-summary .checkout-button:hover {
   background-color: #059669;
 }
+
 
 /* RECIPE PAGE */
 
 .close-icon1 {
   position: absolute;
-  top: 5rem;
+  /* top: 3.5rem; */
   right: 2rem;
   cursor: pointer;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  transition: background-color 0.3s ease;
 }
 
 .close-icon1:hover {
- color: rgb(255, 0, 0);
+  color: rgb(255, 0, 0);
 }
-
-
 .recipe-page {
   display: flex;
   flex-direction: column;
   background-color: white;
   height: calc(100vh - 160px);
+  padding: 1.5rem;
+  border-radius: 25px;
 }
 
-.home-button {
-  padding: 8px 16px;
-  background-color: #34d399;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.home-button:hover {
-  background-color: #67b6ef; /* cyan blue color */
-}
 .recipe-page h2 {
   align-self: center;
-  font-size: 35px;
+  font-size: 45px;
+  margin-bottom: 1.2rem;
 }
 
-.recipe-page h4 {
-  align-self: center;
-  font-size: 25px;
+.recipe-page p {
+  /* align-self: center; */
+  font-size: 19px;
   margin-top: 10px;
 }
 
@@ -436,7 +438,7 @@ body {
 .video-container {
   grid-area: 1/1/2/2;
   width: 750px;
-  height: 400px;
+  height: 375px;
   margin-top: 28px;
 }
 
@@ -462,30 +464,31 @@ body {
 }
 
 .recipe-details ol li::marker {
-  content: "»";
+  content: "☞";
 }
 
 .recipe-details ol li {
   margin-left: 1rem;
 }
 
+
 /* CHECKOUT */
 
-.checkout{
+
+.checkout {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 5rem;
   height: calc(100vh - 5rem);
-  
 }
 
-.heading h1{
+.heading h1 {
   font-size: 2.3rem;
   margin-bottom: 1.2rem;
 }
 
-.checkout-container{
+.checkout-container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -497,44 +500,46 @@ body {
 .left-section {
   display: flex;
   flex-direction: column;
-  margin-right: 1rem;
-  width:60%;
+  /* margin-right: -3rem; */
+  width: 70%;
+  gap: 15px;
 }
 
 .delivery-section,
 .payment-section,
 .order-review {
   width: 680px;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .delivery-section {
   background-color: #ffffff;
-  height: 420px;
+  /* height: 420px; */
 }
 
- /* DELIVERY SECTION */
+/* DELEVERY SECTION STARTS */
 
-.delivery-heading{
-  color:white;
-  font-size: 1rem;
-  font-weight: 10;
-  padding:0.7rem;
-  background-color: #735DA0;
+.delivery-section h2 {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 800;
+  padding: 0.7rem;
+  background-color: black;
+  cursor: pointer;
 }
 
-.address-section{
+.address-section {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
 }
 
-.address-section .name{
-   height:2.2rem;
-   border: 2px solid #e6e2e2;
+.address-section .name {
+  height: 2.2rem;
+  border: 2px solid #e6e2e2;
 }
 
-.Mobile-number{
+.Mobile-number {
   display: flex;
   flex-direction: row;
   margin-top: 0.5rem;
@@ -554,36 +559,45 @@ body {
   margin-left: 1rem;
 }
 
-.address-section .address{
+.address-section .address {
   border: 2px solid #e6e2e2;
 }
 
-.save-button{
-  margin-left:33rem;
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+
+
+.save-button {
+  margin-top: 0.8rem;
+  margin-left: 33rem;
+  font-size: 0.78rem;
   background-color: #34d399;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border: none;
-  text-align: center;  
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
 
-.save-button:hover{
+.save-button:hover {
   background-color: #059669;
 }
 
+/* DELEVERY SECTION ENDS */
 
- /* PAYMENT SECTION */
+/* PAYMENT SECTION STARTS   */
+
 .payment-section h2 {
-  background-color: #735da0;
+  background-color: #000000;
   color: #fff;
   height: 40px;
   font-size: 1.6rem;
   font-weight: 800;
-  padding:0.6rem;
-  width:660px;
-
+  padding: 0.6rem;
+  width: 660px;
+  cursor: pointer;
 }
 
 .payment-section form {
@@ -599,20 +613,38 @@ body {
 }
 
 .payment-method {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
-.payment-method label{
+.payment-method label {
+  display: flex;
+  flex: 1;
+  align-items: center;
   margin-left: 1rem;
 }
 
-.payment-method small{
-  margin-left: 1.9rem;
+.payment-method small {
+  margin-top: 1.5rem;
 }
 
+.payment-method .text {
+  flex-basis: 100%;
+  margin-left: 30px;
+}
+
+.payment-method .images {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
 
 .payment-method img {
-  height: 28px;
+  margin-left: 10px;
+  height: 38px;
 }
 
 .review-button {
@@ -633,71 +665,162 @@ body {
 
 /* PAYMENT SECTION ENDS */
 
+/* ORDER REVIEW SECTION STARTS FROM HERE */
+
 .order-review {
-  background-color: #735da0;
+  /* background-color: #000000;
   color: #fff;
   height: 40px;
   font-size: 1.3rem;
   font-weight: 10;
   padding:0.6rem;
-  width:660px;
+  width:660px; */
+  background: white;
+  /* margin-bottom: 20px; */
+  /* width:680px; */
 }
 
-.cartpage{
-  display: block;
-  flex-grow: 0;
+.order-review h2 {
+  background-color: #000000;
+  color: #fff;
+  height: 40px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.6rem;
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 20px; */
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* .order-info h4{
+  font-size: 1.6rem;
+} */
+
+.order-info p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  word-break: break-all;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.place-order-button {
+  margin-left: 33rem;
+  display: flex;
+  width: 4rem;
+  align-items: flex-end;
+  font-size: 0.79rem;
+  background-color: #34d399;
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.place-order-button:hover {
+  background-color: #059669;
+}
+
+/* ORDER REVIEW SECTION ENDS */
+
+/* CSS TRANSITION STARTS */
+
+.section-enter {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 500ms ease-out, opacity 700ms ease-out;
+}
+
+.section-enter-active {
+  max-height: 620px; /* a value large enough to accommodate the content */
+  opacity: 1;
+}
+
+.section-exit {
+  max-height: 620px;
+  opacity: 1;
+}
+
+.section-exit-active {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 500ms ease-in, opacity 700ms ease-in;
+}
+
+/* CSS TANSTION ENDS */
+
+/* CART SECTION STARTS FROM HERE */
+.cartpage {
+  display: flex;
+  flex-direction: column;
+  /* flex-grow: 0;
   flex-shrink: 1;
   flex-basis: auto;
   align-self: auto;
-  order: 0;
+  order: 0; */
   background-color: #ffffff;
-  width:300px;
+  width: 350px;
   height: calc(100vh - 14rem);
 }
 
-.cart-heading1{
-  color:black;
+.cart-heading1 {
+  color: black;
   font-size: 1rem;
   font-weight: 10;
-  padding:0.7rem;
+  padding: 0.7rem;
   background-color: rgb(202, 199, 199);
 }
 
-.cart-total{
+.cart-total {
   padding: 0.8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.cart-total p,h4{
+.cart-total p,
+h4 {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
   font-size: 1rem;
   margin: 0;
 }
 
+.cart-total h4 span {
+  color: #34d399;
+}
 .cart-items-container {
-  max-height: 320px; /* Adjust as needed */
+  max-height: 330px; /* Adjust as needed */
   overflow-y: auto;
 }
 
-.cart-total h4 span{
-  color: #34d399;
-}
-
-.cart-heading2{
-  color:black;
+.cart-heading2 {
+  color: black;
   font-size: 1rem;
   padding: 0.7rem;
 }
 
-.empty-cart1{
-  font-size: 1.7rem;
-  margin-top: 6.5rem;
+.empty-cart1 {
+  font-size: 1.5rem;
+  margin-top: 7rem;
   color: rgb(152, 148, 148);
   font-weight: 10;
-  margin-left: 4rem;
+  margin-left: 3.8rem;
 }
 
+/* CART SECTION ENDS */
 
 
 
@@ -854,6 +977,64 @@ body {
   .recipe-details ol{
     font-size: 0.7rem;
     margin-left: 1rem;
+  }
+
+  /* CHECKOUT PAGE */
+
+  .checkout {
+    margin-top: 2rem;
+  }
+
+  .heading h1 {
+    font-size: 2.3rem;
+    margin-bottom: 1.2rem;
+    margin-right: 0.5rem;
+    /* text-align: center; */
+  }
+
+  .checkout-container {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 20px;
+  }
+
+  .cartpage {
+    /* margin-left: 10rem; */
+    margin: 0.8rem;
+    width: 100%;
+    /* border-radius: 10px; */
+  }
+
+  .cart-heading1 {
+    font-size: 1.3rem;
+  }
+
+  .cart-items-container {
+    max-height: 378px;
+  }
+
+  .left-section {
+    padding: 8px;
+  }
+
+  .delivery-section,
+  .payment-section,
+  .order-review {
+    width: 365px;
+  }
+  
+  .save-button{
+    margin-top: 0.8rem;
+    margin-left:10rem;
+  }
+
+  .payment-section h2 {
+    width: 345px;
+  }
+  
+  .place-order-button {
+    margin-top: 0.8rem;
+    margin-left: 15rem;
   }
 
 }
