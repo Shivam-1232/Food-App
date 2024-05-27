@@ -1,121 +1,132 @@
 import React, { useContext, useRef } from "react";
-import { Formik } from "formik";
 import { CSSTransition } from "react-transition-group";
 import { CheckoutContext } from "../context/CheckOutContext";
 
-const DeliveryOptions = () => {
+const PaymentOptions = () => {
   const {
-    deliveryInfo,
-    validate,
+    paymentMethod,
+    handlePaymentChange,
     containerOpen,
     setContainerOpen,
+    handleSubmit,
   } = useContext(CheckoutContext);
 
-  const deliveryRef = useRef(null);
+  const paymentRef = useRef(null);
   const duration = 500;
 
   return (
-    <div className="delivery-section">
-      <h2 onClick={() => setContainerOpen(1)}>1. DELIVERY OPTIONS</h2>
+    <div className="payment-section">
+      <h2 onClick={() => setContainerOpen(2)}>2. PAYMENT OPTIONS</h2>
       <CSSTransition
-        in={containerOpen === 1}
+        in={containerOpen === 2}
         timeout={duration}
         classNames="section"
         unmountOnExit
-        nodeRef={deliveryRef}
+        nodeRef={paymentRef}
       >
-        <Formik
-          initialValues={deliveryInfo}
-          validate={validate}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
-          }}
-        >
-          {({
-            values,
-            errors,
-            touched,
-            handleChange,
-            handleBlur,
-            handleSubmit,
-            isSubmitting,
-          }) => (
-            <form onSubmit={handleSubmit}>
-              <div className="address-section">
-                <input
-                  type="text"
-                  className="name"
-                  placeholder="Enter Full Name"
-                  name="name"
-                  value={values.name}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-                {errors.name && touched.name && (
-                  <div className="error-message">{errors.name}</div>
-                )}
+        <form ref={paymentRef}>
+          <div className="payment-method">
+            <input
+              type="checkbox"
+              id="Yummly-gift-card"
+              name="payment"
+              value="Yummly Gift Card"
+              checked={paymentMethod === "Yummly Gift Card"}
+              onChange={handlePaymentChange}
+            />
+            <label htmlFor="Yummly-gift-card">Yummly Gift Card</label>
+            <div className="images">
+              <img src="./gift-card.png" alt="Yummly Rewards Redemption Card" />
+            </div>
+            <div className="text">
+              <small>
+                New! You can now use up to 5 gift cards on orderYummly!
+              </small>
+            </div>
+          </div>
+          <hr />
 
-                <div className="Mobile-number">
-                  <input
-                    type="number"
-                    className="number"
-                    placeholder="Mobile Number"
-                    name="mobileNumber"
-                    value={values.mobileNumber}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.mobileNumber && touched.mobileNumber && (
-                    <div className="error-message">{errors.mobileNumber}</div>
-                  )}
+          <div className="payment-method">
+            <input
+              type="checkbox"
+              id="Yummly-rewards"
+              name="payment"
+              value="Yummly Rewards Redemption Card"
+              checked={paymentMethod === "Yummly Rewards Redemption Card"}
+              onChange={handlePaymentChange}
+            />
+            <label htmlFor="Yummly-rewards">
+              Yummly Rewards Redemption Card
+            </label>
+            <div className="images">
+              <img src="./rewardcard.png" alt="Yummly Rewards Redemption Card" />
+            </div>
+          </div>
+          <hr />
 
-                  <input
-                    type="text"
-                    className="email"
-                    placeholder="Email Address"
-                    name="email"
-                    value={values.email}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.email && touched.email && (
-                    <div className="error-message">{errors.email}</div>
-                  )}
-                </div>
+          <div className="payment-method">
+            <input
+              type="radio"
+              id="credit-card"
+              name="payment"
+              value="Credit or Debit Card"
+              checked={paymentMethod === "Credit or Debit Card"}
+              onChange={handlePaymentChange}
+            />
+            <label htmlFor="credit-card">Credit or Debit Card</label>
+            <div className="images">
+              <img src="mastercard.png" alt="Credit or Debit Card logos" />
+              <img src="visa.png" alt="Credit or Debit Card logos" />
+              <img
+                src="american-express.png"
+                alt="Credit or Debit Card logos"
+              />
+            </div>
+          </div>
+          <hr />
 
-                <textarea
-                  id="address"
-                  className="address"
-                  name="address"
-                  rows="9"
-                  cols="60"
-                  maxLength={100}
-                  placeholder="Enter Your Address"
-                  value={values.address}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                ></textarea>
-                {errors.address && touched.address && (
-                  <div className="error-message">{errors.address}</div>
-                )}
+          <div className="payment-method">
+            <input
+              type="radio"
+              id="netbanking"
+              name="payment"
+              value="Net Banking"
+              checked={paymentMethod === "Net Banking"}
+              onChange={handlePaymentChange}
+            />
+            <label htmlFor="netbanking">Net Banking</label>
+            <div className="images">
+              <img src="netbanking.png" alt="Net Banking" />
+            </div>
+          </div>
+          <hr />
 
-                <button
-                  className="save-button"
-                  type="submit"
-                  disabled={isSubmitting}
-                >
-                  SAVE & CONTINUE
-                </button>
-              </div>
-            </form>
-          )}
-        </Formik>
+          <div className="payment-method">
+            <input
+              type="radio"
+              id="upi"
+              name="payment"
+              value="Upi"
+              checked={paymentMethod === "Upi"}
+              onChange={handlePaymentChange}
+            />
+            <label htmlFor="upi">UPI</label>
+            <div className="images">
+              <img src="google-pay.png" alt="Upi" />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            className="review-button"
+            onClick={handleSubmit}
+          >
+            Review Order
+          </button>
+        </form>
       </CSSTransition>
     </div>
   );
 };
 
-export default DeliveryOptions;
+export default PaymentOptions;
