@@ -28,19 +28,19 @@ const PaymentOptions = () => {
           <div className="payment-method">
             <input
               type="checkbox"
-              id="Yummly-gift-card"
+              id="gift-card"
               name="payment"
-              value="Yummly Gift Card"
-              checked={paymentMethod === "Yummly Gift Card"}
+              value="Gift Card"
+              checked={paymentMethod === "Gift Card"}
               onChange={handlePaymentChange}
             />
-            <label htmlFor="Yummly-gift-card">Yummly Gift Card</label>
+            <label htmlFor="gift-card">Swigato Gift Card</label>
             <div className="images">
-              <img src="./gift-card.png" alt="Yummly Rewards Redemption Card" />
+              <img src="./gift-card.png" alt="Swigato Rewards Redemption Card" />
             </div>
             <div className="text">
               <small>
-                New! You can now use up to 5 gift cards on orderYummly!
+                New! You can now use up to 5 gift cards on Swigato!!!
               </small>
             </div>
           </div>
@@ -49,24 +49,24 @@ const PaymentOptions = () => {
           <div className="payment-method">
             <input
               type="checkbox"
-              id="Yummly-rewards"
+              id="rewards"
               name="payment"
-              value="Yummly Rewards Redemption Card"
-              checked={paymentMethod === "Yummly Rewards Redemption Card"}
+              value="Swigato Rewards Redemption Card"
+              checked={paymentMethod === "Swigato Rewards Redemption Card"}
               onChange={handlePaymentChange}
             />
-            <label htmlFor="Yummly-rewards">
-              Yummly Rewards Redemption Card
+            <label htmlFor="Swigato-rewards">
+            Swigato Rewards Redemption
             </label>
             <div className="images">
-              <img src="./rewardcard.png" alt="Yummly Rewards Redemption Card" />
+              <img src="./rewardcard.png" alt="Swigato Rewards Redemption Card" />
             </div>
           </div>
           <hr />
 
           <div className="payment-method">
             <input
-              type="radio"
+              type="radio"s
               id="credit-card"
               name="payment"
               value="Credit or Debit Card"

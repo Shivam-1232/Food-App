@@ -351,7 +351,7 @@ body {
   position: sticky;
   bottom: 0;
   left: 0;
-  background-color: #fefcfc;
+  background-color: #D3C5E5;
   padding: 20px;
   z-index: 1;
   height: 20%;
@@ -524,7 +524,7 @@ body {
   font-size: 1.6rem;
   font-weight: 800;
   padding: 0.7rem;
-  background-color: black;
+  background-color: #735da5;
   cursor: pointer;
 }
 
@@ -590,7 +590,7 @@ body {
 /* PAYMENT STARTS   */
 
 .payment-section h2 {
-  background-color: #000000;
+  background-color: #735da5;
   color: #fff;
   height: 40px;
   font-size: 1.6rem;
@@ -681,7 +681,7 @@ body {
 }
 
 .order-review h2 {
-  background-color: #000000;
+  background-color: #735da5;
   color: #fff;
   height: 40px;
   font-size: 1.6rem;
