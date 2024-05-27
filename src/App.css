@@ -663,9 +663,9 @@ body {
   background-color: #059669;
 }
 
-/* PAYMENT SECTION ENDS */
+/* PAYMENT  ENDS */
 
-/* ORDER REVIEW SECTION STARTS FROM HERE */
+/* ORDER REVIEW STARTS */
 
 .order-review {
   /* background-color: #000000;
@@ -685,7 +685,7 @@ body {
   color: #fff;
   height: 40px;
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 1000;
   cursor: pointer;
   padding: 0.6rem;
 }

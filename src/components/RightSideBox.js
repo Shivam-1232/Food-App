@@ -12,7 +12,7 @@ const RightSideBox = () => {
     0
   );
 
-  const estimatedDelivery = 100;
+  const estimatedDelivery = 45;
 
   const today = new Date();
   const options = { weekday: "short", day: "numeric", month: "short" };
