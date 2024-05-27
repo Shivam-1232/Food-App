@@ -47,12 +47,12 @@ export const CheckoutContextWrapper = ({ children }) => {
     // Apply discount based on the selected payment method
     let discountAmount = 0;
     let discountLabel = "";
-    if (selectedPayment === "Yummly Gift Card") {
+    if (selectedPayment === "Gift Card") {
       discountAmount = 100; // Example discount amount
-      discountLabel = "Yummly Gift Card Discount";
-    } else if (selectedPayment === "Yummly Rewards Redemption Card") {
+      discountLabel = "Swigato Gift Card Discount";
+    } else if (selectedPayment === "Swigato Rewards Redemption Card") {
       discountAmount = 50; // Example discount amount
-      discountLabel = "Yummly Rewards Discount";
+      discountLabel = "Swigato Rewards Discount";
     }
     setDiscount({ label: discountLabel, amount: discountAmount });
   };
