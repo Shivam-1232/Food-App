@@ -48,10 +48,10 @@ export const CheckoutContextWrapper = ({ children }) => {
     let discountAmount = 0;
     let discountLabel = "";
     if (selectedPayment === "Gift Card") {
-      discountAmount = 100; // Example discount amount
+      discountAmount = 75; // Example discount amount
       discountLabel = "Swigato Gift Card Discount";
     } else if (selectedPayment === "Swigato Rewards Redemption Card") {
-      discountAmount = 50; // Example discount amount
+      discountAmount = 25; // Example discount amount
       discountLabel = "Swigato Rewards Discount";
     }
     setDiscount({ label: discountLabel, amount: discountAmount });
