@@ -17,7 +17,7 @@ body {
 /* DARK THEME COLORS STARTS */
 
 body.dark{
-  background-color:#000000;
+  background-color:#c2c0c8;
 }
 
 body.dark .navbar{
@@ -96,6 +96,7 @@ body.dark .category-buttons button{
   background-color: var(--bg-light-purple);
   height: var(--navbarHt);
   width: 100%;
+  flex-flow: row nowrap;
 }
 
 .navbar img {
@@ -112,25 +113,34 @@ body.dark .category-buttons button{
   border: none;
   padding: 10px;
   font-size: 20px;
-  margin-right: 80px;
+  /* margin-right: 80px; */
 }
 
 .navbar h1 {
   font-size: 40px;
-  margin-left: 110px;
+  /* margin-left: 110px; */
 }
+
+.nav-icons{
+  display: inline-flex;
+  gap: 25px;
+  justify-content: space-around;
+  padding-right: 25px;
+  /* width: 318px; */
+}
+
 
 .cart-icon {
   width: 40px;
   height: 40px;
-  margin-right: -300px;
+  /* margin-right: -300px; */
   cursor: pointer;
 }
 
 /* DARK-MODE SWITCH */
 
 .dark-mode-switch{
-  margin-right: -20rem;
+  /* margin-right: -20rem; */
   width:33px;
   height:33px;
 }
@@ -143,7 +153,7 @@ body.dark .category-buttons button{
   border: none;
   padding: 10px;
   font-size: 20px;
-  margin-right: 80px;
+  /* margin-right: 80px; */
 }
 
 /* CATEGORY */
@@ -988,7 +998,8 @@ h4 {
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: row;
+    /* flex-direction: row; */
+    
     padding: 10px;
     height: auto;
   }

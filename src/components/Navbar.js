@@ -13,6 +13,7 @@ const Navbar = ({ toggle }) => {
     <div className="navbar">
       <img src="../ficon.png" className="App-logo" alt="logo" />
       <h1>Swigato</h1>
+      <div className = "nav-icons">
       <IoMdCart className="cart-icon" onClick={toggle} />
       <DarkModeSwitch
         onChange={setIsDark}
@@ -28,6 +29,7 @@ const Navbar = ({ toggle }) => {
       value={input}
       onChange={handleSearch}
       />
+      </div>
     </div>
   );
 };
