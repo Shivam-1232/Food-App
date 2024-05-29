@@ -109,6 +109,25 @@ body {
   cursor: pointer;
 }
 
+/* DARK-MODE SWITCH */
+
+.dark-mode-switch{
+  margin-right: -20rem;
+  width:33px;
+  height:33px;
+}
+
+
+.navbar input {
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  margin-right: 80px;
+}
+
 /* CATEGORY */
 
 .category {
