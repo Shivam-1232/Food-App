@@ -6,12 +6,57 @@
   font-family: "Radio Canada Big", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #D3C5E5;
 }
 
 :root {
   --navbarHt: 120px;
+}
+
+/* VARIABLE OF CSS */
+
+:root {
+  /* Colors */
+  --color-whitesmoke: whitesmoke;
+  --color-green: #34d399;
+  --color-dark-green: #059669;
+  --color-red: rgb(255, 0, 0);
+  --color-dark-gray: #2d3748;
+  --color-light-green: rgb(36, 212, 36);
+  --color-light-gray: #a0aec0;
+  --color-black: #000000;
+  --color-bright-red: red;
+  --color-white: #fff;
+  --color-true-white: #ffffff;
+  --color-true-black: black;
+  --color-gray:rgb(152, 148, 148);
+  --color-smooth-gray:#e6e2e2;
+  --color-gray-border:#ccc;
+
+  /* Background Colors */
+  --bg-light-gray: rgb(235, 229, 229);
+  --bg-blue: #302ade;
+  --bg-light-purple: #735DA5;
+  --bg-light-gray-opacity: rgb(229, 231, 235 / var(--tw-bg-opacity));
+  --bg-light-green: rgb(126, 237, 126);
+  --bg-white: white;
+  --bg-off-white: #fefcfc;
+  --bg-true-white: #ffffff;
+  --bg-black: #000000;
+  --bg-light-grayish: rgb(202, 199, 199);
+  --bg-green:#34d399;
+  --bg-color-dark-green: #059669;
+  --bg-green-smooth:rgb(52, 211, 153);
+  --bg-pinkish-red:rgba(230, 178, 178,0.7);
+
+  /* Fill */
+  --fill:#ffd700;
+
 }
 
 /* NAVBAR */
@@ -31,7 +76,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #735DA5;
+  background-color: var(--bg-light-purple);
   height: var(--navbarHt);
   width: 100%;
 }
@@ -85,22 +130,22 @@ body {
   margin-left: 0.95rem;
   margin-right: 0.75rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  background-color: var(--bg-light-gray-opacity);
   border: none;
   border-radius: 10px;
   font-size: 17px;
 }
 
 .category-buttons button:hover {
-  background-color: rgb(126, 237, 126);
-  color: white;
+  background-color: var(--bg-light-green);
+  color: var(--color-white);
   cursor: pointer;
 }
 
-.category-buttons button:active {
-  background-color: rgb(126, 237, 126);
-  color: white;
-}
+/* .category-buttons button:active {
+  background-color: var(--bg-green);
+  color: var(--color-white);
+} */
 
 /* CARD */
 
@@ -120,7 +165,7 @@ body {
   height: 320px;
   border-radius: 20px;
   overflow: hidden;
-  background-color: white;
+  background-color: var(--bg-white);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -131,7 +176,6 @@ body {
   align-items: center;
 
 }
-
 
 .food-image {
   width: 100%;
@@ -169,11 +213,11 @@ body {
 .price{
   font-size: 1.2rem;
   font-weight: 10;
-  color: #34d399;
+  color: var(--color-green)
 }
 
 .rating .star {
-  fill: #ffd700;
+  fill: var(--fill);
   font-size: 1.2rem;
 }
 
@@ -191,8 +235,8 @@ body {
   flex: 1;
   padding: 10px;
   border: none;
-  background-color: #34d399;
-  color: #fff;
+  background-color: var(--bg-green);
+  color: (var(--color-white));
   border-radius: 5px;
   cursor: pointer;
   margin: 0 5px;
@@ -200,7 +244,7 @@ body {
 
 .go-to-recipe:hover,
 .add-to-cart:hover {
-  background-color: #059669;
+  background-color: var(--bg-color-dark-green);
 }
 
 /* CART */
@@ -474,13 +518,13 @@ body {
 
 /* CHECKOUT */
 
-
 .checkout {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 5rem;
   height: calc(100vh - 5rem);
+  background-image: url('../public/bg.png');
 }
 
 .heading h1 {
@@ -513,22 +557,46 @@ body {
 }
 
 .delivery-section {
-  background-color: #ffffff;
+  background-color: var(--bg-true-white);
   /* height: 420px; */
 }
 
-/* DELIVERY STARTS */
+/* DELEVERY SECTION STARTS */
 
 .delivery-section h2 {
-  color: white;
+  color: var(--color-white);
   font-size: 1.6rem;
   font-weight: 800;
   padding: 0.7rem;
-  background-color: #735da5;
+  background-color: var(--bg-black);
   cursor: pointer;
 }
 
-.address-section {
+.option-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top:15px;
+}
+
+.option-button {
+  flex: 1;
+  padding: 12px;
+  background-color: var(--bg-true-white);
+  color: var(--color-black);
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  margin: 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.option-button.active {
+  background-color: var(--bg-green);
+  color: var(--color-white);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.address-section,.pickup-section {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
@@ -536,7 +604,7 @@ body {
 
 .address-section .name {
   height: 2.2rem;
-  border: 2px solid #e6e2e2;
+  border: 2px solid var(--color-smooth-gray);
 }
 
 .Mobile-number {
@@ -548,33 +616,34 @@ body {
 
 .Mobile-number .number {
   height: 2.2rem;
-  border: 2px solid #e6e2e2;
+  border: 2px solid var(--color-smooth-gray);
   width: 15rem;
 }
 
 .Mobile-number .email {
   height: 2.2rem;
-  border: 2px solid #e6e2e2;
+  border: 2px solid var(--color-smooth-gray);
   width: 24rem;
   margin-left: 1rem;
 }
 
 .address-section .address {
-  border: 2px solid #e6e2e2;
+  border: 2px solid var(--color-smooth-gray);
 }
 
 .error-message {
-  color: red;
+  color: var(--color-bright-red);
   font-size: 12px;
 }
 
 
 .save-button {
-  margin-top: 0.8rem;
+  /* margin-top: 0.8rem; */
+  margin-bottom:0.5rem;
   margin-left: 33rem;
   font-size: 0.78rem;
-  background-color: #34d399;
-  color: white;
+  background-color: var(--bg-green);
+  color: var(--color-white);
   padding: 10px 10px;
   border: none;
   transition: background-color 0.3s ease;
@@ -582,16 +651,50 @@ body {
 }
 
 .save-button:hover {
-  background-color: #059669;
+  background-color: var(--bg-color-dark-green);
 }
 
-/* DELIVERY END */
+/* PICKUP SECTION STARTS */
 
-/* PAYMENT STARTS   */
+.date-picker {
+  margin-top: 15px;
+}
 
+.custom-datepicker {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-gray-border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pickup-option{
+  margin-left: 2rem;
+}
+
+.date-picker-container {
+  position: relative;
+  margin-top:12px;
+}
+
+.clock {
+  position: absolute;
+  top:8px;
+  right:29.6rem;
+  height:1.5rem;
+  width:1.5rem;
+  cursor: pointer;
+}
+
+
+
+
+/* DELEVERY SECTION ENDS */
+
+/* PAYMENT SECTION STARTS   */
 .payment-section h2 {
-  background-color: #735da5;
-  color: #fff;
+  background-color: var(--bg-black);
+  color: var(--color-white);
   height: 40px;
   font-size: 1.6rem;
   font-weight: 800;
@@ -603,12 +706,12 @@ body {
 .payment-section form {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--bg-white);
   padding: 1rem;
 }
 
 .payment-section hr {
-  border: 1px solid #e6e2e2;
+  border: 1px solid var(--color-smooth-gray);
   margin-bottom: 0.5rem;
 }
 
@@ -650,8 +753,8 @@ body {
 .review-button {
   width: 100%;
   padding: 10px;
-  background-color: #34d399;
-  color: white;
+  background-color: var(--bg-green);
+  color: var(--color-white);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -660,32 +763,23 @@ body {
 }
 
 .review-button:hover {
-  background-color: #059669;
+  background-color: var(--bg-color-dark-green);
 }
 
-/* PAYMENT  ENDS */
+/* PAYMENT SECTION ENDS */
 
-/* ORDER REVIEW STARTS */
+/* ORDER REVIEW SECTION STARTS FROM HERE */
 
 .order-review {
-  /* background-color: #000000;
-  color: #fff;
-  height: 40px;
-  font-size: 1.3rem;
-  font-weight: 10;
-  padding:0.6rem;
-  width:660px; */
-  background: white;
-  /* margin-bottom: 20px; */
-  /* width:680px; */
+  background: var(--bg-true-white);
 }
 
 .order-review h2 {
-  background-color: #735da5;
-  color: #fff;
+  background-color: var(--bg-black);
+  color: var( --color-white);
   height: 40px;
   font-size: 1.6rem;
-  font-weight: 1000;
+  font-weight: 500;
   cursor: pointer;
   padding: 0.6rem;
 }
@@ -717,8 +811,8 @@ body {
   width: 4rem;
   align-items: flex-end;
   font-size: 0.79rem;
-  background-color: #34d399;
-  color: white;
+  background-color: var(--bg-green);
+  color: var(--color-white);
   text-decoration: none;
   padding: 0.8rem;
   border: none;
@@ -727,7 +821,7 @@ body {
 }
 
 .place-order-button:hover {
-  background-color: #059669;
+  background-color: var(--bg-color-dark-green);
 }
 
 /* ORDER REVIEW SECTION ENDS */
@@ -769,17 +863,17 @@ body {
   flex-basis: auto;
   align-self: auto;
   order: 0; */
-  background-color: #ffffff;
+  background-color: var(--bg-true-white);
   width: 350px;
   height: calc(100vh - 14rem);
 }
 
 .cart-heading1 {
-  color: black;
+  color: var(--color-true-black);
   font-size: 1rem;
   font-weight: 10;
   padding: 0.7rem;
-  background-color: rgb(202, 199, 199);
+  background-color: var(--bg-light-grayish);
 }
 
 .cart-total {
@@ -799,7 +893,7 @@ h4 {
 }
 
 .cart-total h4 span {
-  color: #34d399;
+  color: var(--color-green);
 }
 .cart-items-container {
   max-height: 330px; /* Adjust as needed */
@@ -807,7 +901,7 @@ h4 {
 }
 
 .cart-heading2 {
-  color: black;
+  color: var(--color-true-black);
   font-size: 1rem;
   padding: 0.7rem;
 }
@@ -815,7 +909,7 @@ h4 {
 .empty-cart1 {
   font-size: 1.5rem;
   margin-top: 7rem;
-  color: rgb(152, 148, 148);
+  color: var(--color-gray);
   font-weight: 10;
   margin-left: 3.8rem;
 }
