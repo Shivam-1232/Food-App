@@ -252,7 +252,7 @@ body {
 .cart {
   top: var(--navbarHt);
   width: clamp(200px, 30%, 600px);
-  background-color: rgb(231, 214, 241);
+  background-color: var(--bg-white);
   position: fixed;
   height: calc(100vh - var(--navbarHt));
   /* border: 1px solid black; */
@@ -296,7 +296,7 @@ body {
 }
 
 .close-icon:hover {
-  color: rgb(255, 0, 0);
+  color: var(--color-red);
 }
 
 /* CART ITEM */
@@ -311,7 +311,7 @@ body {
 .empty-cart h3 {
   font-size: 2rem;
   margin-top: 10rem;
-  color: rgb(0, 0, 0);
+  color: var(--color-gray);
   font-weight: 100;
   margin-left: 8rem;
 }
@@ -340,23 +340,23 @@ body {
 .cart-item-details h4 {
   margin: 0;
   font-size: 18px;
-  color: #13284b;
+  color: var(--color-dark-gray);
 }
 
 .cart-item-details h5 {
   margin: 5px 0;
   font-size: 16px;
-  color: rgb(36, 212, 36);
+  color: var(--color-light-green);
 }
 
 .cart-item-details .quantity .minus-icon:hover {
   cursor: pointer;
-  color: rgb(255, 0, 0);
+  color: var(--color-red);
 }
 
 .cart-item-details .quantity .plus-icon:hover {
   cursor: pointer;
-  color: rgb(255, 0, 0);
+  color: var(--color-red);
 }
 
 .cart-item-details .quantity {
@@ -373,19 +373,19 @@ body {
 .cart-item-details .quantity .minus-icon {
   cursor: pointer;
   font-size: 1.8rem;
-  color: #a0aec0;
+  color: var(--color-light-gray);
 }
 
 .cart-item-details .quantity .plus-icon {
   cursor: pointer;
   font-size: 1.8rem;
-  color: #a0aec0;
+  color: var(--color-light-gray);
 }
 
 .delete-icon {
   cursor: pointer;
   font-size: 1.8rem;
-  color: #a0aec0;
+  color: var(--color-light-gray);
   margin-bottom: 3.2rem;
 }
 
@@ -395,7 +395,7 @@ body {
   position: sticky;
   bottom: 0;
   left: 0;
-  background-color: #D3C5E5;
+  background-color: var(--bg-off-white);
   padding: 20px;
   z-index: 1;
   height: 20%;
@@ -407,18 +407,18 @@ body {
 }
 
 .checkout-summary h4 span {
-  color: red;
+  color: var(--color-bright-red);
 }
 
 .checkout-summary hr {
   border: 0;
-  border-top: 1px solid #000000;
+  border-top: 1px solid var(--color-black);
   margin: 10px 0;
 }
 
 .checkout-summary .checkout-button {
-  background-color: rgb(52, 211, 153);
-  color: white;
+  background-color: var(--bg-green-smooth);
+  color: var(--color-white);
   padding: 10px 20px;
   border: none;
   border-radius: 15px;
@@ -432,7 +432,7 @@ body {
 }
 
 .checkout-summary .checkout-button:hover {
-  background-color: #059669;
+  background-color: var(--bg-color-dark-green);
 }
 
 
@@ -448,12 +448,12 @@ body {
 }
 
 .close-icon1:hover {
-  color: rgb(255, 0, 0);
+  color: var(--color-red);
 }
 .recipe-page {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--bg-white);
   height: calc(100vh - 160px);
   padding: 1.5rem;
   border-radius: 25px;
@@ -922,8 +922,9 @@ h4 {
 
 .footer {
   padding: 1.25rem;
-  background-color: #735DA5; /* Equivalent to bg-base-200 */
-  color: black; /* Equivalent to text-base-content */
+  background-color: var(--bg-light-purple); /* Equivalent to bg-base-200 */
+  color: var(--color-true-black)
+  ; /* Equivalent to text-base-content */
 }
 
 .footer aside img {
