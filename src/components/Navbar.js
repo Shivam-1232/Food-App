@@ -11,7 +11,7 @@ const Navbar = ({ toggle }) => {
   
    return (
     <div className="navbar">
-      <img src="../ficon.svg" className="App-logo" alt="logo" />
+      <img src="../ficon.png" className="App-logo" alt="logo" />
       <h1>Swigato</h1>
       <IoMdCart className="cart-icon" onClick={toggle} />
       <DarkModeSwitch

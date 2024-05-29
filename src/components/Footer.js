@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="footer">
     <aside>
-      <img src="../ficon.svg" alt="logo" />
+      <img src="../ficon.png" alt="logo" />
       <p>
         Swigato
         <br />
