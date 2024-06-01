@@ -4,6 +4,7 @@ import { useMediaQuery } from "react-responsive";
 import { IoMdCart } from "react-icons/io";
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { IoMdSearch } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 // set localstorage and read the values from localstorage
 const useColorScheme =() => {
@@ -59,7 +60,9 @@ const Navbar = ({ toggle }) => {
    return (
     <div className="navbar">
       <div className="logo-container">
+      <Link to="/about">
       <img src="../ficon.png" className="App-logo" alt="logo" />
+      </Link>
       </div>
       <h1>Swigato</h1>
       <div className = "search-container">
