@@ -983,7 +983,7 @@ h4 {
 
 /* First Container */
 .about-us{
-  background-color: var(--bg-true-white);
+  background-color: var(--bg-light-purple);
 }
 
 .first-container{
@@ -1163,7 +1163,7 @@ h4 {
   padding: 10px 30px 10px 10px;
   margin-bottom: 1.2rem;
   border: none;
-  border: 1px solid #787878;
+  border: 1px solid #ffffff;
   border-radius: 5rem;
   font-size: 16px;
   background-color: transparent; 
@@ -1177,7 +1177,7 @@ textarea {
   padding: 12px 30px 10px 10px;
   margin-bottom: 20px;
   border: none;
-  border: 1px solid #787878;
+  border: 1px solid #ffffff;
   font-size: 16px;
   border-radius: 1.8rem;
   background-color: transparent;
@@ -1197,7 +1197,7 @@ textarea {
 }
 
 .send-button {
-  background-color:  #ff4785;
+  background-color: var(--bg-white);
   color: var(--color-black);
   border: none;
   padding: 15px 20px;
@@ -1208,7 +1208,7 @@ textarea {
 }
 
 .send-button:hover {
-  background-color: #ff69b4;
+  background-color: var(--bg-green);
   color: var(--color-white);
 }
 
@@ -1504,5 +1504,136 @@ textarea {
     margin-top: 0.8rem;
     margin-left: 15rem;
   }
+  /* About Page */
+  
+  .about-us{
+    width:1200px;
+ }
+
+ .first-container{
+   display:flex;
+   flex-direction: column;
+ }
+
+ .left-side-content .logo{
+   height: 12rem;
+   width:12rem;
+ }
+
+ .about-us-content{
+   width:66rem;
+ }
+
+ .about-us-content h3{
+   font-size: 8.5rem;
+ }
+
+ .about-us-text p{
+   font-size: 3rem;
+   line-height: 3.8rem;
+   padding-bottom: 2rem;
+ }                           
+
+ .small-img img{
+   width:31.5rem;
+   height: 22rem;
+ }
+
+ .right-side-content{
+   padding-left: 4rem;
+ }
+
+ .right-side-content img{
+   width:66rem;
+   /* height: 53rem; */
+ }
+ 
+ .second-container{
+   padding: 80px 75px 0px 56px;
+   gap:60px;
+ }
+ 
+ .second-container p{
+   font-size: 2.5rem;
+   line-height: 3rem;
+ }
+
+ .second-container .highlighted-text{
+   font-size: 3rem;
+   line-height: 3.8rem;
+ }
+
+ .third-container{
+   padding: 80px 75px 0px 56px;
+ }
+
+ .third-container video{
+   width:60rem;
+ }
+
+ .third-container p{
+  font-size: 2.5rem;
+  line-height: 3rem;
+  padding: 3rem;
+ }
+
+ .contact-us{
+   display: flex;
+   flex-direction: column;
+ }
+
+ .left-side-imag{
+   padding: 40px 0px 0px 0px;
+ }
+
+ .left-side-imag img{
+   width:75.4rem;
+   height:35rem;
+   border-radius: 0;
+ }
+
+ .contact-us-content{
+   padding-left:18rem;
+ }
+ 
+ .contact-us-content p{
+   font-size: 6rem;
+ }
+
+ .contact-form{
+   height:40rem;
+   width:40rem;
+ }
+
+ .input{
+   height:5rem;
+   width:50rem;
+   font-size: 3rem;
+  
+ }
+
+ .textarea{
+   height:10rem;
+   width:50rem;
+   font-size: 3rem;
+ }
+
+ .form-group{
+   padding-bottom: 1.5rem;
+ }
+
+ .form-group img{
+   padding-top: 1.2rem;
+   height:3.5rem;
+   width:3.5rem;
+ }
+
+
+ .send-button{
+   /* padding:15px 40px; */
+   width:40rem; 
+   font-size:3.5rem;
+ }
+
 
 }
