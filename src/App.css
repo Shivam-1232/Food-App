@@ -983,7 +983,7 @@ h4 {
 
 /* First Container */
 .about-us{
-  background-color: var(--bg-light-purple);
+  background-color: var(--bg-white);
 }
 
 .first-container{
@@ -1163,7 +1163,7 @@ h4 {
   padding: 10px 30px 10px 10px;
   margin-bottom: 1.2rem;
   border: none;
-  border: 1px solid #ffffff;
+  border: 1px solid #000000;
   border-radius: 5rem;
   font-size: 16px;
   background-color: transparent; 
@@ -1177,7 +1177,7 @@ textarea {
   padding: 12px 30px 10px 10px;
   margin-bottom: 20px;
   border: none;
-  border: 1px solid #ffffff;
+  border: 1px solid #000000;
   font-size: 16px;
   border-radius: 1.8rem;
   background-color: transparent;
@@ -1197,7 +1197,7 @@ textarea {
 }
 
 .send-button {
-  background-color: var(--bg-white);
+  background-color: var(--bg-light-purple);
   color: var(--color-black);
   border: none;
   padding: 15px 20px;
