@@ -3,7 +3,7 @@ import { FoodContext } from "../context/FoodContext";
 import { useMediaQuery } from "react-responsive"; 
 import { IoMdCart } from "react-icons/io";
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
-import { IoMdSearch } from "react-icons/io";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 // set localstorage and read the values from localstorage
@@ -30,7 +30,6 @@ const useColorScheme =() => {
   }, [isDark]);
 
   useEffect(() => {
-    console.log(value);
     if (value) {
       document.body.classList.add("dark");
     } else {
@@ -46,9 +45,9 @@ const useColorScheme =() => {
 
 const Navbar = ({ toggle }) => {
   const {handleSearch,input}=useContext(FoodContext);
-  
-
   const { isDark, setIsDark } = useColorScheme();
+
+  
   const [isFocused, setIsFocused] = useState(false);
   const searchInputRef = useRef(null);
 
@@ -68,7 +67,6 @@ const Navbar = ({ toggle }) => {
       <div className = "search-container">
       <IoMdCart className="cart-icon" onClick={toggle} />
       <div className="theme-container">
-      <p>Switch Theme</p>
       <DarkModeSwitch
         onChange={setIsDark}
         checked={isDark}
@@ -78,7 +76,7 @@ const Navbar = ({ toggle }) => {
       />
       </div>
       <div className="search-bar-container">
-      <IoMdSearch className="search-icon" onClick={handleonClick} />
+      <FaMagnifyingGlass className="search-icon" onClick={handleonClick} />
       <input 
        type="text"
        name="search"
@@ -89,8 +87,8 @@ const Navbar = ({ toggle }) => {
       className={isFocused ? "focused" : ""}
       onBlur={() => setIsFocused(false)}
       />
-      </div>
-      </div>
+       </div>
+     </div>
     </div>
   );
 };
