@@ -104,6 +104,7 @@ const decreaseQuantity = (itemId) => {
     foodItem.name.toLowerCase().includes(input.toLowerCase())
     );
     setDisplayFood(filteredCards);
+    // eslint-disable-next-line
   }, [input]); 
   
   const handleClick = (data) => {

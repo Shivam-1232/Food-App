@@ -110,13 +110,20 @@ body.dark .category-buttons button{
   border-radius: 75%;
 }
 
-.navbar input {
-  width: 200px;
+.search-bar-container {
+    position: relative;
+}
+
+#search {
+    width: 70%;
   height: 40px;
   border-radius: 5px;
   border: none;
   padding: 10px;
+  padding-left: 30px;
   font-size: 20px;
+  border: 1px solid black;
+  background-color: white;
   /* margin-right: 80px; */
 }
 
@@ -127,18 +134,24 @@ body.dark .category-buttons button{
 
 .search-container{
   display: inline-flex;
+  align-items: center;
   gap: 25px;
   justify-content: space-around;
-  padding-right: 135px;
-  /* width: 318px; */
+  padding-right: 25px;
+  width: 318px;
 }
 
 
 .cart-icon {
-  width: 40px;
+  min-width: 40px;
   height: 40px;
   /* margin-right: -300px; */
   cursor: pointer;
+}
+
+.cart-icon > svg {
+    width: 100%;
+    height: 100%;
 }
 
 /* DARK-MODE SWITCH */
@@ -156,7 +169,7 @@ body.dark .category-buttons button{
 
 .search-icon{
   position: absolute;
-  right: 216px;
+  left: 5px;
   top:50%;
   transform: translateY(-50%);
   font-size: 18px;
@@ -1158,7 +1171,7 @@ h4 {
 } */
 
  input[type="text"],input[type="email"] {
-  height:2rem;
+  /* height:2rem;
   width: 25rem;
   padding: 10px 30px 10px 10px;
   margin-bottom: 1.2rem;
@@ -1168,7 +1181,7 @@ h4 {
   font-size: 16px;
   background-color: transparent; 
   position: relative;
-  z-index: 1;
+  z-index: 1; */
 }
 
 textarea {
@@ -1276,29 +1289,12 @@ textarea {
     /* margin-left: -140px; */
   }
 
-  .search-bar-container{
-    position: relative;
-    top:-15px;
-    right:48px;
-  }
-
-  .search-icon{
-    position: absolute;
-    left:10px;
-    top:17px;
-    font-size: 18px;
-    color:#000000;
-    z-index: 1;
-    width: 318px;
-
-  }
-
   /* THEME CHANGER */
 
   .theme-container{
     position:absolute;
-    right:30px;
-    top:90px;
+    right:20px;
+    top:105px;
     display: flex;
     flex-direction: row;
     gap:10px;
