@@ -45,6 +45,12 @@ useEffect(() => {
   localStorage.setItem("quantity", JSON.stringify(quantity));
 }, [cartItems, quantity]);
 
+// Calculate total number of items
+const totalItems = cartItems.reduce(
+  (sum, item) => sum + quantity[item.id],
+  0
+);
+
   // for show modal in card 
 const [showModal, setShowModal] = useState(false);
 
@@ -63,7 +69,6 @@ const [recipeItems, setRecipeItems] = useState(null);
   const addToCart = (itemToAdd) => {
 
     // let existingIDs = cartItems.map(item => item.id);
-
     // let isIncluded = existingIDs.includes(itemToAdd.id);
 
     const testIdFucntion = (input) => {
@@ -161,6 +166,7 @@ const decreaseQuantity = (itemId) => {
     setShowModal,
     recipeItems,
     setRecipeItems,
+    totalItems,
   }
   
 

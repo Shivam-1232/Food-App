@@ -44,7 +44,7 @@ const useColorScheme = () => {
 }
 
 const Navbar = ({ toggle }) => {
-    const { handleSearch, input } = useContext(FoodContext);
+    const { handleSearch, input, totalItems } = useContext(FoodContext);
     const { isDark, setIsDark } = useColorScheme();
 
 
@@ -66,7 +66,11 @@ const Navbar = ({ toggle }) => {
             <h1>Swigato</h1>
             <div className="search-container">
                 <div className="cart-icon">
-                    <IoMdCart onClick={toggle} />
+                    <IoMdCart 
+                    onClick={toggle}
+                    style={{height: "38px",width: "38px" }}
+                    />
+                  {totalItems > 0 ? (<span>{totalItems}</span>) : null}
                 </div>
                 <div className="theme-container">
                     <DarkModeSwitch
