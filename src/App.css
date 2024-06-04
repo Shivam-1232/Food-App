@@ -1190,7 +1190,7 @@ h4 {
 } */
 
 .input {
-  height:2rem;
+  height: 2rem;
   width: 25rem;
   padding: 10px 30px 10px 10px;
   margin-bottom: 1.2rem;
@@ -1198,7 +1198,7 @@ h4 {
   border: 1px solid #000000;
   border-radius: 5rem;
   font-size: 16px;
-  background-color: transparent; 
+  background-color: transparent;
   position: relative;
   z-index: 1;
 }
@@ -1407,23 +1407,31 @@ textarea {
     z-index: 1;
   }
 
-  .close-icon1 {
-    margin-top: 0.8rem;
-    font-size: 2.5rem;
-  }
+  /*Recipe page*/
 
   .recipe-page {
     padding: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .close-icon1 {
+    position: absolute;
+    top: 0.5%;
+    font-size: 2.2rem;
   }
 
   .recipe-page h2 {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     margin-bottom: 3px;
   }
 
-  .recipe-page h4 {
-    font-size: 1.4rem;
-    font-weight: 50;
+  .recipe-page p {
+    font-size: 0.89rem;
   }
 
   .recipe-page h4 span {
@@ -1445,11 +1453,11 @@ textarea {
 
   .recipe-details h2 {
     font-size: 1.3rem;
-    font-weight: 20;
+    font-weight: 400;
   }
 
   .recipe-details ol {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     margin-left: 1rem;
   }
 
@@ -1575,10 +1583,10 @@ textarea {
     /* padding: 25px; */
     padding-left: 18px;
     padding-top: 15px;
-    gap:20px;
-    width:89%;
+    gap: 20px;
+    width: 89%;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
   }
 
   .second-container p {
@@ -1594,14 +1602,14 @@ textarea {
   }
 
   .third-container video {
-    width:20rem;
-    height:20rem;
+    width: 20rem;
+    height: 20rem;
   }
 
   .third-container p {
     font-size: 1.2rem;
     padding: 25px;
-    width:87%;
+    width: 87%;
   }
 
   .contact-us {
@@ -1614,30 +1622,30 @@ textarea {
   }
 
   .left-side-imag img {
-    width:23.75rem;
-    height:10rem;
+    width: 23.75rem;
+    height: 10rem;
     border-radius: 0;
   }
 
   .contact-us-content {
-    padding:5px 25px;
-    width:87%;
-    height:30rem;
+    padding: 5px 25px;
+    width: 87%;
+    height: 30rem;
   }
 
-  .contact-us-content {
+  .contact-us-content p {
     font-size: 3rem;
   }
 
   .contact-form {
     height: 40rem;
-    width:87%;
+    width: 87%;
     padding-top: 1rem;
   }
 
   .input {
-      height:1.5rem;
-    width:15.5rem;
+    height: 1.5rem;
+    width: 14rem;
     font-size: 1.5rem;
   }
 
@@ -1648,10 +1656,10 @@ textarea {
   }
 
   .form-group img {
-    height: 1.6rem;
-    width: 1.6rem;
+    height: 1.2rem;
+    width: 1.2rem;
     position: absolute;
-    right: 10px;
+    right: 20px;
   }
 
   .send-button {
