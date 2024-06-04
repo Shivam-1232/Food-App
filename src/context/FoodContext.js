@@ -25,11 +25,25 @@ export const FoodContextProvider = ({ children }) => {
   const [category, dispatch] = useReducer(FoodReducer, initialCategories,  initializeFunc);
 
   const [displayFood, setDisplayFood] = useState(FoodData);
+ 
   // for cart items
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    const storedCartItems = JSON.parse(localStorage.getItem("cartItems"));
+    return storedCartItems || [];
+  });
+
 
   //for quantity
-  const [quantity, setQuantity] = useState({});
+  const [quantity, setQuantity] = useState(() => {
+    const storedQuantity = JSON.parse(localStorage.getItem("quantity"));
+    return storedQuantity || {};
+  });
+
+// Save cart items and quantity to local storage whenever they change
+useEffect(() => {
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  localStorage.setItem("quantity", JSON.stringify(quantity));
+}, [cartItems, quantity]);
 
   // for show modal in card 
 const [showModal, setShowModal] = useState(false);
