@@ -11,6 +11,8 @@ import Error from "./components/Error";
 import { Login } from "./components/Login";
 import { AuthProvider } from "./hooks/useAuth";
 import { ProtectedRoute } from "./routes/ProtectedRoutes";
+import HomePage from "./components/Homepage";
+import Loader from "./components/Loader";
 
 const App = () => {
   return (
@@ -21,27 +23,29 @@ const App = () => {
      hideProgressBar={true}
      closeOnClick
    />
-   <Router>
-   <AuthProvider>
-    <FoodContextProvider>
-        <Routes>
-          <Route element={<Layout/>}>
-          <Route path="/" element={<Card/>} />
-          </Route>
-          <Route path="/checkout" 
-          element={
-          <ProtectedRoute>
-          <Checkout/>
-          </ProtectedRoute>
-          }
-          />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-        <Route path="*" element={<Error />} />
-        </Routes>
-    </FoodContextProvider>
-    </AuthProvider>
-    </Router>
+<Router>
+        <AuthProvider>
+          <FoodContextProvider>
+            <Routes>
+              <Route element={<Layout />}>
+                <Route
+                  path="/card"
+                  element={
+                    <ProtectedRoute>
+                      <Card />
+                    </ProtectedRoute>
+                  }
+                />
+              </Route>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/loader" element={<Loader />} />
+            </Routes>
+          </FoodContextProvider>
+        </AuthProvider>
+      </Router>
     </>
   );
 };
