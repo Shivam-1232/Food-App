@@ -509,6 +509,53 @@ form {
   height: 100%;
 }
 
+/* PROFILE SECTION */
+
+.profile-container{
+  position: relative;
+  cursor: pointer;
+  top:5px;
+}
+
+.profile-container img{
+  height: 27px;
+  width:27px;
+}
+
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+   right:-115px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  width: 250px;
+  z-index: 1000;
+}
+
+.dropdown.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  /* background-color: #f0f0f0; */
+  color:#e45d15;
+  text-decoration: underline;
+}
+
 /* DARK-MODE SWITCH */
 
 .theme-container p {
