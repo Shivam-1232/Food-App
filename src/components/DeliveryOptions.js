@@ -12,10 +12,17 @@ const DeliveryOptions = () => {
   const deliveryRef = useRef(null);
   const duration = 500;
 
-  const { values, handleChange, handleBlur, errors, touched, validateForm } =
-    useFormikContext();
+  const {
+    values,
+    handleChange,
+    handleBlur,
+    errors,
+    touched,
+    setTouched,
+    validateForm,
+  } = useFormikContext();
 
-  //validation of the fields
+  // validation of the fields
 
   const validateName = (name) => {
     if (!name) {
@@ -53,9 +60,30 @@ const DeliveryOptions = () => {
 
   const [deliveryOption, setDeliveryOption] = useState("Delivery");
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedPickupOption, setSelectedPickupOption] = useState("");
 
   const handleOptionChange = (option) => {
     setDeliveryOption(option);
+    setSelectedPickupOption(""); // Reset pickup option when changing delivery method
+  };
+
+  const handleForm = async () => {
+    setTouched({
+      name: true,
+      mobileNumber: true,
+      email: true,
+      address: true,
+    });
+
+
+    const errors = await validateForm();
+    if (deliveryOption === "Pickup" && !selectedPickupOption) {
+      alert("Please select a pickup location.");
+      return;
+    }
+    if (Object.keys(errors).length === 0) {
+      handleSaveAndContinue();
+    }
   };
 
   const filterPassedTime = (time) => {
@@ -162,64 +190,73 @@ const DeliveryOptions = () => {
 
           {deliveryOption === "Pickup" && (
             <div className="pickup-section">
-              <div className="pickup-options">
-                <label>
-                  <Field type="radio" name="pickupOption" value="one" className="radio-button" />
-                  <div className="pickup-option">
-                    <strong>Genda Circle Branch</strong>
-                    <br />
-                    Address: K-10 Atlantis, Genda Cir, opp. Vadodara Central Mall, Alkapuri, Vadodara, Gujarat 390001
-                  </div>
-                </label>
-                <label>
-                  <Field type="radio" name="pickupOption" value="two" className="radio-button" />
-                  <div className="pickup-option">
-                    <strong>Old Padra Branch</strong>
-                    <br />
-                    Address: Ground Floor, The New World, Old Padra Rd, near Gail India Office, Manisha Chowkdi, Vadodara, Gujarat 390020
-                  </div>
-                </label>
-              </div>
-
-              <div className="date-picker">
-                <label>
-                  <strong>Selecte Pickup Time:</strong>
-                </label>
-                <div className="date-picker-container">
-                  <DatePicker
-                    selected={selectedDate}
-                    onChange={(date) => setSelectedDate(date)}
-                    showTimeSelect
-                    showTimeSelectOnly
-                    timeIntervals={15}
-                    filterTime={filterPassedTime}
-                    timeCaption="Time"
-                    dateFormat="h:mm aa"
-                    className="custom-datepicker"
-                  />
-                  <img
-                    src="./clock.png"
-                    alt="clock"
-                    className="clock"
-                    // onClick={() => document.querySelector('.custom-datepicker').click()}
-                  />
+            <div className="pickup-options">
+              <label className="pickup-option-wrapper">
+                <Field
+                  type="radio"
+                  name="pickupOption"
+                  value="one"
+                  className="radio-button"
+                  checked={selectedPickupOption === "one"}
+                  onChange={() => setSelectedPickupOption("one")}
+                />
+                <div className="pickup-option">
+                  <strong>Downtown Location</strong>
+                  <br />
+                  Address: 123 Main Street, Suite 101, Cityville, ST 12345
                 </div>
+              </label>
+              <label className="pickup-option-wrapper">
+                <Field
+                  type="radio"
+                  name="pickupOption"
+                  value="two"
+                  className="radio-button"
+                  checked={selectedPickupOption === "two"}
+                  onChange={() => setSelectedPickupOption("two")}
+                />
+                <div className="pickup-option">
+                  <strong>Suburban Location</strong>
+                  <br />
+                  Address: 456 Elm Avenue, Building B, Townsville, ST 67890
+                </div>
+              </label>
+            </div>
+          
+            <div className="date-picker">
+              <label>
+                <strong>Select Pickup Time:</strong>
+              </label>
+              <div className="date-picker-container">
+                <DatePicker
+                  selected={selectedDate}
+                  onChange={(date) => setSelectedDate(date)}
+                  showTimeSelect
+                  showTimeSelectOnly
+                  timeIntervals={15}
+                  filterTime={filterPassedTime}
+                  timeCaption="Time"
+                  dateFormat="h:mm aa"
+                  className="custom-datepicker"
+                />
+                <img
+                  src="./clock.png"
+                  alt="clock"
+                  className="clock"
+                />
               </div>
             </div>
+          </div>
           )}
-
-          <button
-            className="save-button"
-            type="button"
-            onClick={async () => {
-              const errors = await validateForm();
-              if (Object.keys(errors).length ===0) {
-                handleSaveAndContinue();
-              }
-            }}
-          >
-            SAVE & CONTINUE
-          </button>
+          <div className="save-button-container">
+            <button
+              className="save-button"
+              type="button"
+              onClick={() => handleForm()}
+            >
+              SAVE & CONTINUE
+            </button>
+          </div>
         </Form>
       </CSSTransition>
     </div>

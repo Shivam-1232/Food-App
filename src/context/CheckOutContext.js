@@ -12,6 +12,7 @@ export const CheckoutContextWrapper = ({ children }) => {
 
   const [paymentMethod, setPaymentMethod] = useState("");
   const [discount, setDiscount] = useState({ label: "", amount: 0 });
+  const [selectedGiftCards, setSelectedGiftCards] = useState([]);
   const [containerOpen, setContainerOpen] = useState(0);
   //eslint-disable-next-line
   const [cartItems, setCartItems] = useState([]); // Example cartItems state
@@ -38,6 +39,37 @@ export const CheckoutContextWrapper = ({ children }) => {
   const handleDeliveryChange = (e) => {
     const { name, value } = e.target;
     setDeliveryInfo({ ...deliveryInfo, [name]: value });
+  };
+
+  // gift card section
+  const handleGiftCardChange = (e) => {
+    const { value, checked } = e.target;
+    if (checked) {
+      let discountLabel = "";
+      let discountAmount = 0;
+    
+      switch (value) {
+        case "Yummly Gift Card":
+          discountLabel = "Swigato Gift Card";
+          discountAmount = 50;
+          break;
+        case "Swigato Rewards Redemption Card":
+          discountLabel = "Swigato Rewards Redemption";
+          discountAmount = 150;
+          break;
+        case "Swigato Gift & Reward card":
+          discountLabel = "Swigato Gift & Reward card";
+          discountAmount = 200;
+          break;
+        default:
+          break;
+      }
+      setSelectedGiftCards([...selectedGiftCards, value]);
+      setDiscount({ label: discountLabel, amount: discountAmount });
+    } else {
+      setSelectedGiftCards([]);
+    setDiscount({ label: "", amount: 0 });
+    }
   };
 
   const handlePaymentChange = (e) => {

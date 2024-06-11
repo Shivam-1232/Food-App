@@ -40,7 +40,11 @@ const App = () => {
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<About />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/checkout" element={
+                <ProtectedRoute>
+                <Checkout />
+                </ProtectedRoute>
+                } />
               <Route path="/loader" element={<Loader />} />
             </Routes>
           </FoodContextProvider>

@@ -859,7 +859,7 @@ input[type="search"] {
   cursor: pointer;
   font-size: 1.8rem;
   color: var(--color-light-gray);
-  margin-bottom: 3.2rem;
+  /* margin-bottom: 3.2rem; */
 }
 
 /* CHECKOUT SUMMARY */
@@ -1673,16 +1673,22 @@ textarea {
 
   .theme-container {
     position: absolute;
-    right: 20px;
-    top: 105px;
+    left: 20px;
+    top: 95px;
     display: flex;
     flex-direction: row;
     gap: 10px;
   }
 
-  .theme-container p {
-    display: inline;
-    font-size: 1.1rem;
+  /* Profile */
+
+  .profile-container{
+    position: absolute;
+    right: 20px;
+    top: 105px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
   }
 
   /* NAVBAR SEARCHBAR */
@@ -1761,7 +1767,7 @@ textarea {
   }
 
   .checkout-summary .checkout-button {
-    width: 295px;
+    width: 460px;
   }
 
   /* MODAL STYLING */
