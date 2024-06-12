@@ -6,7 +6,6 @@ import RightSideBox from "./RightSideBox";
 import { Formik } from "formik";
 
 const Checkout = () => {
-
   return (
     <CheckoutContextWrapper>
       <div className="checkout">

@@ -41,7 +41,7 @@ export const CheckoutContextWrapper = ({ children }) => {
     setDeliveryInfo({ ...deliveryInfo, [name]: value });
   };
 
-  // gift card section
+// gift card section
   const handleGiftCardChange = (e) => {
     const { value, checked } = e.target;
     if (checked) {
@@ -49,9 +49,9 @@ export const CheckoutContextWrapper = ({ children }) => {
       let discountAmount = 0;
     
       switch (value) {
-        case "Yummly Gift Card":
+        case "Swigato Gift Card":
           discountLabel = "Swigato Gift Card";
-          discountAmount = 50;
+          discountAmount = 100;
           break;
         case "Swigato Rewards Redemption Card":
           discountLabel = "Swigato Rewards Redemption";
@@ -72,25 +72,16 @@ export const CheckoutContextWrapper = ({ children }) => {
     }
   };
 
-  const handlePaymentChange = (e) => {
-    const selectedPayment = e.target.value;
+
+   const handlePaymentChange = (e) => {
+   const selectedPayment = e.target.value;
     setPaymentMethod(selectedPayment);
 
-    // Apply discount based on the selected payment method
-    let discountAmount = 0;
-    let discountLabel = "";
-    if (selectedPayment === "Gift Card") {
-      discountAmount = 125; // Example discount amount
-      discountLabel = "Swigato Gift Card Discount";
-    } else if (selectedPayment === "Swigato Rewards Redemption Card") {
-      discountAmount = 75; // Example discount amount
-      discountLabel = "Swigato Rewards Discount";
-    }
-    setDiscount({ label: discountLabel, amount: discountAmount });
-  };
+ };
 
 
   const handleSaveAndContinue = () => {
+    
     setContainerOpen(2);
   };
 
@@ -115,7 +106,6 @@ export const CheckoutContextWrapper = ({ children }) => {
   const values = {
     deliveryInfo,
     paymentMethod,
-    discount,
     containerOpen,
     setContainerOpen,
     handleDeliveryChange,
@@ -128,6 +118,9 @@ export const CheckoutContextWrapper = ({ children }) => {
     estimatedDelivery,
     formattedDate,
     finalTotal,
+    handleGiftCardChange,
+    selectedGiftCards,
+    discount
   };
 
   return (
