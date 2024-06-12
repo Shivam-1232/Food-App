@@ -1183,7 +1183,7 @@ input[type="search"] {
   margin-bottom: 0.5rem;
 }
 
-.payment-method {
+.payment-method, .gift-card-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1191,7 +1191,7 @@ input[type="search"] {
   flex-wrap: wrap;
 }
 
-.payment-method label {
+.payment-method label, .gift-card-section label {
   display: flex;
   flex: 1;
   align-items: center;
@@ -1202,7 +1202,7 @@ input[type="search"] {
   margin-top: 1.5rem;
 }
 
-.payment-method .text {
+.payment-method .text, .gift-card-section .text {
   flex-basis: 100%;
   margin-left: 30px;
 }
@@ -1213,7 +1213,7 @@ input[type="search"] {
   margin-left: auto;
 }
 
-.payment-method img {
+.payment-method img, .gift-card-section  img {
   margin-left: 10px;
   height: 38px;
 }
