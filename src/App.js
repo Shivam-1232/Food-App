@@ -1,6 +1,5 @@
 import React from "react";
-<<<<<<< Updated upstream
-import { FoodContextProvider } from './context/FoodContext';
+import FoodContextProvider  from './context/FoodContext';
 import "./App.css"
 import Card from "./components/card"; 
 import{ BrowserRouter as Router, Routes, Route,} from "react-router-dom";
@@ -58,20 +57,3 @@ const App = () => {
 export default App;
 
 
-=======
-import Navbar from "./components/Navbar";
-import FoodContextProvider from "./context/foodContext";
-
-
-const App = () => {
-  return (
-   <FoodContextProvider>
-    <div>
-      <Navbar />
-    </div>
-   </FoodContextProvider>
-  );
-};
-
-export default App;
->>>>>>> Stashed changes
